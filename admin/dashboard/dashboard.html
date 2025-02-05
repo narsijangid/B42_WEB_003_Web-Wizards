@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(49, 50, 64);
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: rgb(49, 50, 64);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .nav-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgb(49, 50, 64);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background-color: #555;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: rgb(49, 50, 64);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        .chart-placeholder {
+            height: 200px;
+            background-color: rgb(49, 50, 64);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src='VOUGECART.png' alt='Dashboard Logo' style='width: 100px; height: auto;'>
+            <h1>Dashboard</h1>
+            <div class="nav-item">Overview</div>
+            <div class="nav-item">Orders</div>
+            <div class="nav-item">Deliveries</div>
+            <div class="nav-item">Settings</div>
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+           
+
+            <!-- Card 1 -->
+            <div class="card">
+                <h2>Recent Orders</h2>
+                <div class="chart-placeholder">Recent Orders List</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h2>Performance</h2>
+                <div class="chart-placeholder">Performance Metrics</div>
+            </div>
+        </div>
+    </div>
+    <div style='text-align: center; margin-top: 20px;'>
+        
+    </div>
+</body>
+</html>
