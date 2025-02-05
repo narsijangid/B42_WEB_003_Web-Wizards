@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register</title>
+    <link rel="stylesheet" href="Adminlogin.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="login-container">
+       <div id="logo">
+        <img src="./img/vecblack.png" alt="Logo">
+       </div>
+        <h4>Create Account</h4>
+
+        <button type="submit" id="sign-up-with-google">
+            <i class="ri-google-fill"></i> Sign up with Google
+        </button>
+
+       <div class="separator"> 
+        <span>OR</span>
+       </div>
+       
+        <form action="admin-dashboard.html" method= "POST">
+            <label for="name">First name*</label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+            <label for="email">E-mail* </label>
+            <input type="email" id="email" name="username" placeholder="Enter your email" required>
+            
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password" placeholder="Create a Password" minlength="8" required>
+             <p style="text-align: left;  font-size: 12px;">Must be atleast 8 characters</p>
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="Adminlogin.html" class="signup-link">Sign in</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
