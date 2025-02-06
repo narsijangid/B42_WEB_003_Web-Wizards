@@ -1,6 +1,6 @@
 let productDiv = document.getElementById("product-section");
- 
-(async function() {
+
+(async function () {
     let API = await fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json");
     let response = await API.json();
     displayData(response);
@@ -23,13 +23,3 @@ function displayData(response) {
         productDiv.append(singleProductDiv);
     });
 }
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('search-button').addEventListener('click', function() {
-        let searchValue = document.querySelector('input').value;
-        if (searchValue) {
-            window.location.href = `./users/products/Searchlist.html?search=${encodeURIComponent(searchValue)}`;
-        }
-    });
-});

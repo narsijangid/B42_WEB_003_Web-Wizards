@@ -1,222 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order List</title>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VogueCart - Search List</title>
+
     <style>
-        *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    max-height: 100vh;
-    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-body{
-    background-color: #F1F3F4;
-}
-        #header{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #161828;
-  height: 80px;
-}
+      #product-section {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 90%;
+        row-gap: 30px;
+        margin: 40px auto;
+        justify-items: center;
+        height: auto;
+      }
 
-#header>img{
-    height: 60px;
-    padding: 10px 0px;
-}
-input{
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid rgb(102, 101, 101);
-    text-align: center;
-    font-size: 18px;
-    background-color: #1d1f34;
-    color: white;
-}
-#search-div{
-    display: flex;
-align-items: center;
-}
-#search-button{
-    width: 50px;
-    height: 31px;
-    border-radius: 5px;
-    border: 1px solid black;
-    padding-top: 2px;
-    margin-left: 2px;
-}
-#search-button>img{
-    height: 25px;
-    width: 25px;
-    
-}
-#search-button:hover{
-    background-color: rgb(211, 211, 211);
-    border: 2px solid white;
-}
-#search-button:active{
-    background-color: rgb(175, 174, 174);
-    border: 2px solid white;
-}
-#search-button>img:hover{
-    width: 27px;
-    padding: 0;
-}
-#header>div>img{
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-        #product-section {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            width: 90%;
-            row-gap: 30px;
-            margin: 40px auto;
-            justify-items: center;
-            height: auto;
-        }
+      #single-product-div {
+        width: 250px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: #f9fbfc;
+        height: 300px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-        #single-product-div {
-            width: 250px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            background-color: #F9FBFC;
-            height: 300px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+      #product-image-div > img {
+        width: 100%;
+        height: 150px;
+        background-color: #e2e8ed;
+      }
 
-        #product-image-div > img {
-            width: 100%;
-            height: 150px;
-            background-color: #E2E8ED;
-        }
+      #category-section {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+        width: 90%;
+      }
 
-        #category-section {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px auto;
-            width: 90%;
-        }
+      .category-box {
+        height: 40px;
+        width: 200px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        transition: background 0.3s;
+      }
 
-        .category-box {
-            height: 40px;
-            width: 200px;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 5px;
-            cursor: pointer;
-            color: white;
-            background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-            transition: background 0.3s;
-        }
+      .category-box:hover {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
 
-        .category-box:hover {
-            background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-        }
+      #show-more-btn {
+        text-align: center;
+        margin: 30px auto;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        width: 150px;
+      }
 
-        #show-more-btn {
-            text-align: center;
-            margin: 30px auto;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            display: block;
-            width: 150px;
-        }
+      #show-more-btn:hover {
+        background-color: #45a049;
+      }
 
-        #show-more-btn:hover {
-            background-color: #45a049;
-        }
+      #search-value-display {
+        text-align: center;
+        margin: 20px;
+      }
 
-        #search-value-display {
-            text-align: center;
-            margin: 20px;
-        }
-
-        #search-query {
-            font-weight: bold;
-        }
+      #search-query {
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
+    <link rel="stylesheet" href="../../css/navbar.module.css" />
+    <link rel="stylesheet" href="../../css/font.module.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <header id="header">
-        <img src="../../VOUGECART.png">
+      <div class="strip main-width">
+        <div class="app-download">
+          <i class="ri-smartphone-line"></i>
+          <span>Download VogueCart mobile app</span>
+        </div>
+        <div class="top-head-nav-links">
+          <p class="nav-links">Promo</p>
+          <p class="nav-links">VogueCart news</p>
+          <p class="nav-links">Help & Center</p>
+          <p class="nav-links">Language</p>
+        </div>
+      </div>
+
+      <nav class="main-width">
+        <div class="logo">
+          <img src="../../images/VOUGECART_light.png" alt="logo" />
+          <p>VOGUECART</p>
+        </div>
+
         <div id="search-div">
-            <input id="search-input" placeholder="Search product here...">
-            <button id="search-button"><img src="../../search.png"></button>
+          <div class="location">
+            <p><i class="ri-map-pin-line"></i> Deliver to</p>
+            <p class="address">Bangalore, India</p>
+          </div>
+
+          <select name="categories" id="categories">
+            <option value="all">All products</option>
+            <option value="beauty">Beauty</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="kitchen-accessories">Kitchen Accessories</option>
+            <option value="laptops">Laptops</option>
+            <option value="mens-shirts">Mens Shirts</option>
+            <option value="mens-shoes">Mens Shoes</option>
+            <option value="mens-watches">Mens Watches</option>
+            <option value="mobile-accessories">Mobile Accessories</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="skin-care">Skin Care</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="sports-accessories">Sports Accessories</option>
+            <option value="sunglasses">Sunglasses</option>
+            <option value="tablets">Tablets</option>
+            <option value="tops">Tops</option>
+            <option value="vehicle">Vehicle</option>
+            <option value="womens-bags">Womens Bags</option>
+            <option value="womens-dresses">Womens Dresses</option>
+            <option value="womens-jewellery">Womens Jewellery</option>
+            <option value="womens-shoes">Womens Shoes</option>
+            <option value="womens-watches">Womens Watches</option>
+          </select>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search product here..."
+          />
+          <button id="search-button"><i class="ri-search-2-line"></i></button>
         </div>
-        <div id="profile-div">
-            <img src="../../user.png">
+
+        <div class="nav-options">
+          <i class="ri-shopping-cart-line"></i>
+          <i class="ri-notification-line"></i>
+          <div class="hr"></div>
+          <div class="user">
+            <i class="ri-user-3-line"></i>
+          </div>
+          <i class="ri-arrow-down-s-fill"></i>
         </div>
+      </nav>
     </header>
     <main>
-        <div id="search-value-display">Search value by: <span id="search-query"></span></div>
-        <div id="category-section"></div>
-        <div id="product-section"></div>
-        <div id="show-more-btn">Show More</div>
+      <div id="search-value-display">
+        Search value by: <span id="search-query"></span>
+      </div>
+      <div id="category-section"></div>
+      <div id="product-section"></div>
+      <div id="show-more-btn">Show More</div>
     </main>
+
     <script>
-        let products = [];
-        let filteredProducts = [];
-        let displayedProducts = 10;
+      let products = [];
+      let filteredProducts = [];
+      let displayedProducts = 10;
 
-        fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json")
-            .then(response => response.json())
-            .then(data => {
-                products = Object.values(data);
-                let categories = [...new Set(products.map(product => product.category))].slice(0, 6);
-                filteredProducts = products;
-                displayCategories(categories);
-                displayProducts();
+      fetch(
+        "https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          products = Object.values(data);
+          let categories = [
+            ...new Set(products.map((product) => product.category)),
+          ].slice(0, 6);
+          filteredProducts = products;
+          displayCategories(categories);
+          displayProducts();
 
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchValue = urlParams.get('search');
-                if (searchValue) {
-                    document.getElementById('search-query').textContent = searchValue;
-                }
-            })
-            .catch(error => console.error("Error fetching data:", error));
+          const urlParams = new URLSearchParams(window.location.search);
+          const searchValue = urlParams.get("search");
+          if (searchValue) {
+            document.getElementById("search-query").textContent = searchValue;
+          }
+        })
+        .catch((error) => console.error("Error fetching data:", error));
 
-        function displayCategories(categories) {
-            const categorySection = document.getElementById("category-section");
-            categorySection.innerHTML = "";
-            categories.forEach(category => {
-                const div = document.createElement("div");
-                div.classList.add("category-box");
-                div.textContent = category;
-                div.onclick = () => filterByCategory(category);
-                categorySection.appendChild(div);
-            });
-        }
+      function displayCategories(categories) {
+        const categorySection = document.getElementById("category-section");
+        categorySection.innerHTML = "";
+        categories.forEach((category) => {
+          const div = document.createElement("div");
+          div.classList.add("category-box");
+          div.textContent = category;
+          div.onclick = () => filterByCategory(category);
+          categorySection.appendChild(div);
+        });
+      }
 
-        function filterByCategory(category) {
-            filteredProducts = products.filter(product => product.category === category);
-            displayedProducts = 10;  
-            displayProducts();
-        }
+      function filterByCategory(category) {
+        filteredProducts = products.filter(
+          (product) => product.category === category
+        );
+        displayedProducts = 10;
+        displayProducts();
+      }
 
-        function displayProducts() {
-            const productSection = document.getElementById("product-section");
-            productSection.innerHTML = "";
-            const productsToDisplay = filteredProducts.slice(0, displayedProducts);
-            productsToDisplay.forEach(product => {
-                const singleProductDiv = document.createElement("div");
-                singleProductDiv.setAttribute("id", "single-product-div");
-                singleProductDiv.innerHTML = `
+      function displayProducts() {
+        const productSection = document.getElementById("product-section");
+        productSection.innerHTML = "";
+        const productsToDisplay = filteredProducts.slice(0, displayedProducts);
+        productsToDisplay.forEach((product) => {
+          const singleProductDiv = document.createElement("div");
+          singleProductDiv.setAttribute("id", "single-product-div");
+          singleProductDiv.innerHTML = `
                     <div id="product-image-div">
                         <img src="${product.thumbnail}" />
                     </div>
@@ -227,21 +252,26 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
                         <p><img src=""/>${product.rating}</p>
                     </div>
                 `;
-                productSection.append(singleProductDiv);
-            });
-        }
-
-        document.getElementById("show-more-btn").addEventListener("click", () => {
-            displayedProducts += 20;
-            displayProducts();
+          productSection.append(singleProductDiv);
         });
+      }
 
-        document.getElementById("search-button").addEventListener("click", function() {
-            let searchValue = document.querySelector("input").value;
-            if (searchValue) {
-                window.location.href = `Searchlist.html?search=${encodeURIComponent(searchValue)}`;
-            }
+      document.getElementById("show-more-btn").addEventListener("click", () => {
+        displayedProducts += 20;
+        displayProducts();
+      });
+
+      document
+        .getElementById("search-button")
+        .addEventListener("click", function () {
+          let searchValue = document.querySelector("input").value;
+          if (searchValue) {
+            window.location.href = `Searchlist.html?search=${encodeURIComponent(
+              searchValue
+            )}`;
+          }
         });
     </script>
-</body>
+    <script src="../../js/navbar.js"></script>
+  </body>
 </html>
