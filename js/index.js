@@ -1,6 +1,5 @@
 let productDiv = document.getElementById("product-section");
-
-      
+ 
 (async function() {
     let API = await fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json");
     let response = await API.json();
@@ -34,5 +33,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-

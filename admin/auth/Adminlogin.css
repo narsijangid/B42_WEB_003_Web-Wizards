@@ -1,260 +1,236 @@
-
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    margin: 0;
-    overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  overflow: hidden;
 }
 
 /* Login Container  */
 .login-container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    width: 350px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 0.6s ease-in-out forwards;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+  transform: translateY(-20px);
 }
 
 /*  Logo */
 #logo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #logo img {
-    width: 80px;
-    height: 55px;
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
+  width: 80px;
+  height: 55px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 #logo img:hover {
-    transform: rotate(10deg);
+  transform: rotate(10deg);
 }
 
 /* Separator */
 .separator {
-    margin: 10px 0;
-    font-weight: bold;
-    color: #888;
-    position: relative;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards 0.3s;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #888;
+  position: relative;
+  text-align: center;
 }
 
 .separator span {
-    background: white;
-    padding: 0 10px;
+  background: white;
+  padding: 0 10px;
 }
 
 .separator::before {
-    content: "";
-    display: block;
-    height: 1px;
-    background: #ccc;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: -1;
+  content: "";
+  display: block;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
 }
 
 /*  Labels */
 label {
-    display: block;
-    text-align: left;
-    font-weight: bold;
-    font-size: 12.5px;
-    margin-top: 10px;
-    opacity: 0;
-    animation: fadeIn 0.2s ease-in-out forwards 0.2s;
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  font-size: 12.5px;
+  margin-top: 10px;
 }
-  
+
 input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #29977E;
-    border-radius: 5px;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #29977e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 input:focus {
-    border-color: #19765F;
-    box-shadow: 0 0 8px rgba(41, 151, 126, 0.6);
+  border-color: #19765f;
+  box-shadow: 0 0 8px rgba(41, 151, 126, 0.6);
 }
 
- 
 button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background: #29977E;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: #29977e;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
 button:hover {
-    background: black;
-    transform: scale(1.05);
+  background: black;
+  transform: scale(1.01);
 }
 
 button:active {
-    transform: scale(0.98);
+  transform: scale(0.99);
 }
 
 /*  Google Button - Better Effect */
 #sign-up-with-google {
-    background-color: white;
-    color: #050607;
-    border: 1px solid #29977E;
-    font-weight: bold;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    transition: all 0.3s ease-in-out;
+  background-color: white;
+  color: #050607;
+  border: 1px solid #29977e;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.15s ease;
 }
 
 #sign-up-with-google:hover {
-    background: #29977E;
-    color: white;
-    transform: scale(1.05);
+  background: #29977e;
+  color: white;
+  transform: scale(1.01);
 }
 
 #sign-up-with-google i {
-    font-size: 18px;
-    transition: transform 0.3s ease-in-out;
-}
-
-#sign-up-with-google:hover i {
-    transform: rotate(360deg);
+  font-size: 18px;
+  transition: all 0.15s ease;
 }
 
 /*  Checkbox */
 .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards 0.25s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .options label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .options input[type="checkbox"] {
-    margin-right: 5px;
+  margin-right: 5px;
 }
-#rem input{
-    width: fit-content;
+#rem input {
+  width: fit-content;
 }
 /*  Forgot Password */
 .forgot-password {
-    text-decoration: none;
-    color: #0b0c0c;
-    font-size: 14px;
-    transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: #0b0c0c;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-    text-decoration: underline;
-    color: #29977E;
+  text-decoration: underline;
+  color: #29977e;
 }
 
 /* Signup Link */
 .signup-link {
-    font-weight: bold;
-    text-decoration: none;
-    color: #29977E;
-    transition: color 0.3s ease-in-out;
+  font-weight: bold;
+  text-decoration: none;
+  color: #29977e;
+  transition: color 0.15s ease;
 }
 
 .signup-link:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  text-decoration: underline;
+  color: black;
 }
 
 /*  RESPONSIVE DESIGN */
 
 @media (max-width: 480px) {
-    .login-container {
-        width: 90%;
-        padding: 15px;
-    }
-    
-    h4 {
-        font-size: 16px;
-    }
+  .login-container {
+    width: 90%;
+    padding: 15px;
+  }
 
-    p, label, .forgot-password {
-        font-size: 12px;
-    }
+  h4 {
+    font-size: 16px;
+  }
 
-    input, button {
-        padding: 8px;
-    }
+  p,
+  label,
+  .forgot-password {
+    font-size: 12px;
+  }
 
-    #sign-up-with-google {
-        font-size: 12px;
-    }
+  input,
+  button {
+    padding: 8px;
+  }
+
+  #sign-up-with-google {
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-    .login-container {
-        width: 80%;
-        max-width: 400px;
-    }
+  .login-container {
+    width: 80%;
+    max-width: 400px;
+  }
 
-    h4 {
-        font-size: 18px;
-    }
+  h4 {
+    font-size: 18px;
+  }
 
-    input, button {
-        padding: 10px;
-    }
+  input,
+  button {
+    padding: 10px;
+  }
 }
 
- 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .login-container {
-        width: 400px;
-    }
+  .login-container {
+    width: 400px;
+  }
 }
 
- 
 @media (min-width: 1025px) {
-    .login-container {
-        width: 350px;
-    }
+  .login-container {
+    width: 350px;
+  }
 }
