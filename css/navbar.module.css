@@ -38,7 +38,7 @@ nav {
   gap: 2rem;
 }
 
-.top-head-nav-links p:hover {
+.nav-links:hover {
   text-decoration: underline;
   cursor: pointer;
 }
