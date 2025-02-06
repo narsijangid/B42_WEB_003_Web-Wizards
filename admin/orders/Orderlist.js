@@ -7,13 +7,13 @@ const mainContent = document.getElementById('main-content');
 closeBtn.addEventListener('click', () => {
     sidebar.classList.add('closed');
     mainContent.classList.add('sidebar-closed');
-    reopenSidebarBtn.style.display = 'block'; 
+    reopenSidebarBtn.style.display = 'block';
 });
 
 openSidebarBtn.addEventListener('click', () => {
     sidebar.classList.remove('closed');
     mainContent.classList.remove('sidebar-closed');
-    reopenSidebarBtn.style.display = 'none'; 
+    reopenSidebarBtn.style.display = 'none';
 });
 
 reopenSidebarBtn.addEventListener('click', () => {
