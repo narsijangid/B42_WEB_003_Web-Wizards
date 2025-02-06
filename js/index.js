@@ -1,12 +1,12 @@
 (async function () {
     let API = await fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json");
     let response = await API.json();
-    console.log(response);
-    let topRated = [...response].sort((a, b) => b.rating - a.rating).slice(0, 5);
+    response = Object.entries(response);
+    let topRated = response.sort((a, b) => b[1].rating - a[1].rating).slice(0, 5);
 
-    let mensProducts = response.filter((item) => item.category === "mens-shirts").slice(0, 5);
+    let mensProducts = response.filter((item) => item[1].category === "mens-shirts").slice(0, 5);
 
-    let laptopProducts = response.filter((item) => item.category === "laptops").slice(0, 5);
+    let laptopProducts = response.filter((item) => item[1].category === "laptops").slice(0, 5);
 
     
     let categories = [
@@ -76,13 +76,20 @@ function displayData(sections) {
             section.products.forEach((item) => {
                 let productDiv = document.createElement("div");
                 productDiv.innerHTML = `
-                    <img src="${item.thumbnail || ''}" alt="${item.title || 'Category'}" />
-                    <p id="item-category">${item.category || ''}</p>
-                    <h3>${item.title || ''}</h3>
+                    <img src="${item[1].thumbnail || ''}" alt="${item[1].title || 'Category'}" />
+                    <p id="item-category">${item[1].category || ''}</p>
+                    <h3>${item[1].title || ''}</h3>
                     <div id="price-rating">
-                        <p id="price">${item.price ? `$${item.price}` : ''}</p>
-                        <p id="rate">${item.rating ? `<i class="ri-star-s-fill"></i>${item.rating}` : ''}</p>
+                        <p id="price">${item[1].price ? `$${item[1].price}` : ''}</p>
+                        <p id="rate">${item[1].rating ? `<i class="ri-star-s-fill"></i>${item[1].rating}` : ''}</p>
                     </div>`;
+
+                    productDiv.addEventListener("click", () => {
+                        console.log(item[0])
+                        window.location.href = `./users/products/individualProduct.html?id=${item[0]}`;
+                        
+                    });
+
                 productListDiv.appendChild(productDiv);
             });
 
