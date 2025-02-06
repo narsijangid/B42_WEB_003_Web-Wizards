@@ -5,33 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VogueCart</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        #product-section {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 90%;
+            row-gap: 30px;
+            margin: 40px auto;
+            justify-items: center;
+            height: 500px;
+        }
+        #single-product-div {
+            width: calc(250px);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: #F9FBFC;
+            height: fit-content;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #product-image-div>img {
+            width: 250px;
+            background-color: #E2E8ED;
+        }
+        #product-brand {
+            font-size: 13px;
+            color: #BFBFC1;
+            font-weight: bold;
+            padding: 5px 0px 5px 10px;
+        }
+        #product-brand+h3 {
+            font-weight: bold;
+            padding: 0 10px 10px;
+        }
+        #item-price-rate {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px 10px;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
-       <img src="./VOUGECART.png">
-       <div id="search-div">
-       <input placeholder="Search product here...">
-       <button id="search-button"><img src="./search.png"></button>
-       </div>
-       <div id="profile-div">
-        <img src="./user.png">
-       </div>
+        <img src="./VOUGECART.png">
+        <div id="search-div">
+            <input id="search-input" placeholder="Search product here...">
+            <button id="search-button"><img src="./search.png"></button>
+        </div>
+        <div id="profile-div">
+            <img src="./user.png">
+        </div>
     </header>
-    <section>
-
-    </section>
     <main>
-<div id="category-section">
-    
-</div>
-<div id="product-section">
+        <div id="product-section"></div>
+    </main>
+    <footer></footer>
 
-</div>
- </main>   
-    <footer>
-
-    </footer>
+   
+    <script src="./js/index.js"></script>
 </body>
 </html>
-
-<script src="./index.js"></script>
