@@ -11,51 +11,6 @@ body {
   background-color: #f1f3f4;
 }
 
-
-/* display data */
-#product-section {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 90%;
-  row-gap: 30px;
-  margin: 40px auto;
-  justify-items: center;
-  height: 500px;
-}
-
-#single-product-div {
-  width: calc(250px);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: #f9fbfc;
-  height: fit-content;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#product-image-div>img {
-  width: 250px;
-  background-color: #e2e8ed;
-}
-
-#product-brand {
-  font-size: 13px;
-  color: #bfbfc1;
-  font-weight: bold;
-  padding: 5px 0px 5px 10px;
-}
-
-#product-brand+h3 {
-  font-weight: bold;
-  padding: 0 10px 10px;
-}
-
-#item-price-rate {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 10px 10px;
-}
-
-
 /* category */
 #category-section {
   display: flex;
@@ -75,8 +30,8 @@ body {
   margin: 10px 0;
 }
 
-.category-header>p {
-  color: #2A977B;
+.category-header > p {
+  color: #2a977b;
   font-weight: bold;
 }
 
@@ -85,7 +40,6 @@ body {
   justify-content: space-center;
   margin: auto;
   gap: 50px;
-
 }
 
 .category-list-div div {
@@ -96,12 +50,12 @@ body {
   cursor: pointer;
 }
 
-.category-list-div div>img {
+.category-list-div div > img {
   padding: 10px 0px 0px 0px;
   width: 80px;
 }
 
-.category-list-div div>p {
+.category-list-div div > p {
   text-align: center;
   font-size: 14px;
   padding: auto 20px;
@@ -121,7 +75,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
-
 .product-header {
   display: flex;
   justify-content: space-between;
@@ -129,8 +82,8 @@ body {
   padding: 10px 20px 0px;
 }
 
-.product-header>p {
-  color: #2A977B;
+.product-header > p {
+  color: #2a977b;
   font-weight: bold;
 }
 
@@ -138,10 +91,9 @@ body {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(5, 1fr);
-
 }
 
-.product-list-div>div {
+.product-list-div > div {
   width: 240px;
   justify-items: center;
   border: 1px solid rgb(213, 211, 211);
@@ -149,20 +101,19 @@ body {
   border-radius: 10px;
 }
 
-.product-list-div div>img {
+.product-list-div div > img {
   width: 240px;
   border-radius: 10px;
-  background-color: #E9EFF4;
+  background-color: #e9eff4;
 }
 
 #item-category {
   font-size: 14px;
   color: #bfbfc1;
   font-weight: bold;
-
 }
 
-#item-category+h3 {
+#item-category + h3 {
   font-weight: bold;
   font-size: 16px;
   padding: 0px 10px;
@@ -175,15 +126,15 @@ body {
 }
 
 #price {
-  color: #2A977B;
+  color: #2a977b;
   font-weight: bold;
 }
 
 #rate {
-  color: #BFBEC1;
+  color: #bfbec1;
   font-size: 16px;
 }
 
-#rate>i {
-  color: #EDA042;
+#rate > i {
+  color: #eda042;
 }
