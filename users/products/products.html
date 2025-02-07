@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VogueCart - Searched Product Lists</title>
+    <link rel="stylesheet" href="../../css/navbar.module.css" />
+    <link rel="stylesheet" href="../../css/font.module.css" />
+    <link rel="stylesheet" href="../../css/footer.module.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <div class="strip main-width">
+        <div class="app-download">
+          <i class="ri-smartphone-line"></i>
+          <span>Download VogueCart mobile app</span>
+        </div>
+        <div class="top-head-nav-links">
+          <p class="nav-links">Promo</p>
+          <p class="nav-links">VogueCart news</p>
+          <p class="nav-links">Help & Center</p>
+          <p class="nav-links">Language</p>
+        </div>
+      </div>
+
+      <nav class="main-width">
+        <div class="logo">
+          <img
+            src="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="logo"
+          />
+          <p>VOGUECART</p>
+        </div>
+
+        <div id="search-div">
+          <div class="location">
+            <p><i class="ri-map-pin-line"></i> Deliver to</p>
+            <p class="address">Bangalore, India</p>
+          </div>
+
+          <select name="categories" id="categories">
+            <option value="all">All products</option>
+            <option value="beauty">Beauty</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="kitchen-accessories">Kitchen Accessories</option>
+            <option value="laptops">Laptops</option>
+            <option value="mens-shirts">Mens Shirts</option>
+            <option value="mens-shoes">Mens Shoes</option>
+            <option value="mens-watches">Mens Watches</option>
+            <option value="mobile-accessories">Mobile Accessories</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="skin-care">Skin Care</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="sports-accessories">Sports Accessories</option>
+            <option value="sunglasses">Sunglasses</option>
+            <option value="tablets">Tablets</option>
+            <option value="tops">Tops</option>
+            <option value="vehicle">Vehicle</option>
+            <option value="womens-bags">Womens Bags</option>
+            <option value="womens-dresses">Womens Dresses</option>
+            <option value="womens-jewellery">Womens Jewellery</option>
+            <option value="womens-shoes">Womens Shoes</option>
+            <option value="womens-watches">Womens Watches</option>
+          </select>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search product here..."
+          />
+          <button id="search-button"><i class="ri-search-2-line"></i></button>
+        </div>
+
+        <div class="nav-options">
+          <i class="ri-shopping-cart-line"></i>
+          <i class="ri-notification-line"></i>
+          <div class="hr"></div>
+          <div class="user">
+            <i class="ri-user-3-line"></i>
+          </div>
+          <i class="ri-arrow-down-s-fill"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-width">
+      <div class="filter-sort">
+        <div id="search-value-display"></div>
+
+        <div class="sort-by">
+          <button class="sort-by">SORT BY <i class="ri-add-fill"></i></button>
+
+          <div class="sort-options">
+            <div class="sort-option">
+              <input type="radio" name="sort-by" id="sort-by-price-asc" />&nbsp;
+              <label for="sort-by-price-asc">Price: Low to High</label>
+            </div>
+            <div class="sort-option">
+              <input
+                type="radio"
+                name="sort-by"
+                id="sort-by-price-desc"
+              />&nbsp;
+              <label for="sort-by-price-desc">Price: High to Low</label>
+            </div>
+            <div class="sort-option">
+              <input
+                type="radio"
+                name="sort-by"
+                id="sort-by-rating-asc"
+              />&nbsp;
+              <label for="sort-by-rating-asc">Ratings: Low to High</label>
+            </div>
+            <div class="sort-option">
+              <input
+                type="radio"
+                name="sort-by"
+                id="sort-by-rating-desc"
+              />&nbsp;
+              <label for="sort-by-rating-desc">Ratings: High to Low</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="display-section">
+        <div class="filter-section">
+          <div class="rating-filter">
+            <h4>Filter by Ratings</h4>
+            <div class="rating-filter-option">
+              <input type="radio" id="star-4-above" name="ratings-filter" />
+              <label for="star-4-above">
+                <span>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                </span>
+                &nbsp; &amp; above
+              </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="star-3-above" name="ratings-filter" />
+              <label for="star-3-above">
+                <span>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                </span>
+                &nbsp; &amp; above
+              </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="star-2-above" name="ratings-filter" />
+              <label for="star-2-above">
+                <span>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                </span>
+                &nbsp; &amp; above
+              </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="star-1-above" name="ratings-filter" />
+              <label for="star-1-above">
+                <span>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                  <i class="ri-star-line"></i>
+                </span>
+                &nbsp; &amp; above
+              </label>
+            </div>
+          </div>
+
+          <hr />
+          <div class="price-filter">
+            <h4>Filter by Price</h4>
+            <div class="price-filter-option">
+              <input type="radio" id="price-25-above" name="price-filter" />
+              <label for="price-25-above"> $25 &amp; above </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="price-50-above" name="price-filter" />
+              <label for="price-50-above"> $50 &amp; above </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="price-75-above" name="price-filter" />
+              <label for="price-75-above"> $75 &amp; above </label>
+            </div>
+            <div class="rating-filter-option">
+              <input type="radio" id="price-100-above" name="price-filter" />
+              <label for="price-100-above"> $100 &amp; above </label>
+            </div>
+          </div>
+        </div>
+        <div id="product-section"></div>
+      </div>
+
+      <div id="product-section"></div>
+    </main>
+    <footer class="main-width">
+      <div class="logo-links">
+        <div class="footer-about">
+          <img
+            src="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="Logo"
+          />
+          <h3>
+            Your One-Stop Destination for Everything You Need, Anytime,
+            Anywhere!
+          </h3>
+          <p>VogueCart, 2025.</p>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li class="footer-link-headings">COMPANY</li>
+            <li class="nav-links">About</li>
+            <li class="nav-links">Careers</li>
+            <li class="nav-links">Partners</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">HELP</li>
+            <li class="nav-links">Shipping</li>
+            <li class="nav-links">Payments</li>
+            <li class="nav-links">Cancellations & Returns</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">LEGAL</li>
+            <li class="nav-links">Terms of Service</li>
+            <li class="nav-links">Privacy Policy</li>
+            <li class="nav-links">Cookies Policy</li>
+            <li class="nav-links">Security</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-instagram-fill"></i></a>
+          <a href="#"><i class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="../../js/navbar.js"></script>
+  </body>
+</html>
