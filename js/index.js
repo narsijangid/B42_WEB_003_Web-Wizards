@@ -86,7 +86,7 @@ function displayData(sections) {
 
                     productDiv.addEventListener("click", () => {
                         console.log(item[0])
-                        window.location.href = `./users/products/individualProduct.html?id=${item[0]}`;
+                        window.location.href = `B42_WEB_003_Web-Wizards/users/products/individualProduct.html?id=${item[0]}`;
                         
                     });
 
