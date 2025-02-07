@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products Table</title>
+    <link rel="stylesheet" href="product_table.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Products Table</h1>
+        <div class="toolbar">
+            <a href="B42_WEB_003_Web-Wizards/admin/products/products_form.html" class="add-product-btn">Add Product</a>
+            <input type="text" id="searchInput" placeholder="Search products by any field...">
+            <select id="itemsPerPage">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+
+        <table id="productsTable">
+            <thead>
+                <tr id="table-headers"></tr>
+            </thead>
+            <tbody id="productsBody"></tbody>
+        </table>
+
+        <div id="pagination" class="pagination"></div>
+    </div>
+
+    <script src="products_table1.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

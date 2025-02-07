@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 6000%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2d3748;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-product-btn {
+  background-color: #48bb78;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #38a169;
+}
+
+input#searchInput {
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  width: 200px;
+}
+
+select#itemsPerPage {
+  padding: 5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #2d3748;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.page-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.page-btn, button {
+  padding: 8px 12px;
+  margin: 0;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #2d3748;
+  color: white;
+}
+
+.page-btn.active {
+  background-color: #4a5568;
+  color: white;
+}
+
+button:disabled {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* Button styles for table actions */
+.qty-btn, .delete-btn {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qty-btn {
+  background-color: #4299e1;
+}
+
+.qty-btn:hover {
+  background-color: #3182ce;
+}
+
+.delete-btn {
+  background-color: #e53e3e;
+}
+
+.delete-btn:hover {
+  background-color: #c53030;
+}
+
+
+

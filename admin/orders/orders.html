@@ -11,45 +11,66 @@
     <link rel="stylesheet" href="./Orderlist.css" />
   </head>
   <body>
-    <div class="sidebar" id="sidebar">
-      <h1>
-        Conceals.
-        <span class="close-btn" id="close-btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-x"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </span>
-      </h1>
-      <ul>
+    <link rel="stylesheet" href="style.module.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="VOUGECART"></i>
+      
+        <img src='/B42_WEB_003_Web-Wizards/images/VOUGECART_dark.png' alt='Dashboard Logo' style='width: 65px; height: auto;'>
+        <p style="color:white;">VOUGECART</p>
+      </div>
+      <ul class="nav-links">
         <li>
-          <a href="#"><i class="fas fa-home"></i> Overview</a>
+          <a href="#" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
         </li>
         <li>
-          <a href="#"><i class="fas fa-users"></i> Member</a>
+          <a href="#">
+            <i class="bx bx-box"></i>
+            <span class="links_name">Product</span>
+          </a>
         </li>
-        <li>
-          <a href="#"><i class="fas fa-list"></i> Product List</a>
+        
+        
+       <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Profile</span>
+          </a>
         </li>
-        <li>
-          <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
-        </li>
-        <li>
-          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
         </li>
       </ul>
     </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="profile-details">
+          <img src="images/profile.jpg" alt="" />
+          <span class="admin_name">Prem Shahi</span>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+      </nav>
+    
+    
     <div class="main-content" id="main-content">
       <div class="open-sidebar-btn" id="open-sidebar-btn">
         <svg
@@ -121,6 +142,7 @@
             <td>386 Items Left</td>
             <td>400 ml</td>
             <td>Sunscreen</td>
+           <td><button style="background-color:black;  color:white">Add Item</button></td>
           </tr>
           <tr>
             <td>
@@ -134,6 +156,7 @@
             <td>386 Items Left</td>
             <td>250 ml</td>
             <td>Moisturizer</td>
+            <td><button style="background-color:black;color:white">Add Item</button></td>
           </tr>
           <tr>
             <td>
@@ -147,6 +170,7 @@
             <td>386 Items Left</td>
             <td>100 ml</td>
             <td>Sunscreen</td>
+            <td><button style="background-color:black;color:white">Add Item</button></td>
           </tr>
           <tr>
             <td>
@@ -160,6 +184,7 @@
             <td>386 Items Left</td>
             <td>175 ml</td>
             <td>Moisturizer</td>
+            <td><button style="background-color:black;color:white">Add Item</button></td>
           </tr>
           <tr>
             <td>
@@ -173,6 +198,7 @@
             <td>386 Items Left</td>
             <td>225 ml</td>
             <td>Cleanser</td>
+            <td><button style="background-color:black;  color:white">Add Item</button></td>
           </tr>
         </tbody>
       </table>
