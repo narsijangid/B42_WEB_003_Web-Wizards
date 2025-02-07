@@ -68,7 +68,7 @@ main{
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    min-width: 350px;
     width: 100%;
     text-align: center;
   }
@@ -89,26 +89,7 @@ main{
   }
   
   /* Product Details */
-  .individual-product-order-details {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .individual-product-order-details img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-  }
-  
-  .individual-product-order-details h4 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #444;
-  }
+
   
   /* Quantity Selection */
   .individual-product-order-quantity {
