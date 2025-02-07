@@ -2,34 +2,48 @@
 
 <html lang="en" dir="ltr">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="./css/OrdersManage.css">
-<meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="VOUGECART.png">
-    
-  <title>Responsiive Admin Dashboard | CodingLab</title>
-    <link rel="stylesheet" href="style.module.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/OrdersManage.css" />
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../images/VOUGECART_light.png"
+    />
+
+    <title>VOUGECART - Admin Order page</title>
+    <link rel="stylesheet" href="./style.module.css" />
     <!-- Boxicons CDN Link -->
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-
   </head>
   <body>
     <div class="sidebar">
       <div class="logo-details">
         <i class="VOUGECART.png"></i>
-      
-        <img src='/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png' alt='Dashboard Logo' style='width: 50px; height: auto;'>
-        <p style="color:white;">VOUGECART</p>
+
+        <img
+          src="../../images/VOUGECART_light.png"
+          alt="Dashboard Logo"
+          style="width: 50px; height: auto"
+        />
+        <p style="color: white">VOUGECART</p>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="/B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html" class="active">
+          <a
+            href="../dashboard/dashboard.html"
+            class="active"
+          >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -46,9 +60,7 @@
             <span class="links_name">Orders</span>
           </a>
         </li>
-    
-  
-     
+
         <li>
           <a href="#">
             <i class="bx bx-cog"></i>
@@ -74,97 +86,85 @@
           <i class="bx bx-search"></i>
         </div>
         <div class="profile-details">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPq_GdHrAfGdnr3cLDeagSc7X_twjR_6Cz9Q&s" alt="" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPq_GdHrAfGdnr3cLDeagSc7X_twjR_6Cz9Q&s"
+            alt=""
+          />
           <span class="admin_name">Maxwell </span>
           <i class="bx bx-chevron-down"></i>
         </div>
       </nav>
 
-
-
-
       <div class="home-content">
-   
-
-
-
-      
-
-
         <div class="dashboard">
-           
-            <div class="summary">
-                <div class="summary-item">
-                    <div class="summary-title">Today</div>
-                    <div class="summary-value">48</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-title">Total orders</div>
-                    <div class="summary-value">493</div>
-                </div>
-              
-                <div class="summary-item">
-                    <div class="summary-title">Returns</div>
-                    <div class="summary-value">359</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-title">Fulfilled orders over time</div>
-                    <div class="summary-value">353</div>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-title">orders over time</div>
-                    <div class="summary-value">353</div>
-                </div>
+          <div class="summary">
+            <div class="summary-item">
+              <div class="summary-title">Today</div>
+              <div class="summary-value">48</div>
             </div>
+            <div class="summary-item">
+              <div class="summary-title">Total orders</div>
+              <div class="summary-value">493</div>
+            </div>
+
+            <div class="summary-item">
+              <div class="summary-title">Returns</div>
+              <div class="summary-value">359</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-title">Fulfilled orders over time</div>
+              <div class="summary-value">353</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-title">orders over time</div>
+              <div class="summary-value">353</div>
+            </div>
+          </div>
         </div>
 
-
-
-          
         <div class="table-controls">
-            <div class="search-bar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="Search"> <!-- Replace with your search icon path -->
-                <input id="secondsearch" type="text" placeholder="Search">
-            </div>
-          
-
-            <div class="select-wrapper">
-              <select id="filter-button">
-                  <option value="">All Orders</option>
-                  <option value="beauty">Beauty</option>
-                  <option value="leptop">Laptop</option>
-              </select>
+          <div class="search-bar">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png"
+              alt="Search"
+            />
+            <!-- Replace with your search icon path -->
+            <input id="secondsearch" type="text" placeholder="Search" />
           </div>
-          
 
+          <div class="select-wrapper">
+            <select id="filter-button">
+              <option value="">All Orders</option>
+              <option value="beauty">Beauty</option>
+              <option value="leptop">Laptop</option>
+            </select>
+          </div>
         </div>
 
         <div class="table-container">
           <table>
             <thead>
-                <tr>
-                    <th>Order</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th>Category</th>
-                    <th>Order Status</th>
-                    <th>Price</th>
-                    <th>Return Policy</th>
-                    <th>Actions</th>
-                </tr>
+              <tr>
+                <th>Order</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Order Status</th>
+                <th>Price</th>
+                <th>Return Policy</th>
+                <th>Actions</th>
+              </tr>
             </thead>
             <tbody id="orderTableBody"></tbody>
-        </table>
+          </table>
 
-            <div class="pagination">
-                <button class="active">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-            </div>
+          <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+          </div>
         </div>
-
-
 
         <div id="editPopup" class="popup">
           <div class="popup-header">
@@ -172,14 +172,19 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
           </div>
           <div class="popup-content">
-            <img id="popupThumbnail" src="" alt="Product" height="100px" width="150">
+            <img
+              id="popupThumbnail"
+              src=""
+              alt="Product"
+              height="100px"
+              width="150"
+            />
             <p id="popupTitle"></p>
             <select id="orderStatus">
               <option value="Ordered">Ordered</option>
               <option value="Shipped">Shipped</option>
               <option value="OutForDelivery">Out for Delivery</option>
               <option value="Delivered">Delivered</option>
-            
             </select>
           </div>
           <div class="popup-buttons">
@@ -190,7 +195,6 @@
     </section>
 
     <script>
-
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");
       sidebarBtn.onclick = function () {
@@ -199,74 +203,97 @@
           sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
-      
-      document.addEventListener("DOMContentLoaded", () => {
-  fetchOrders();
-  document.querySelector(".search-box input").addEventListener("input", filterOrders);
-});document.addEventListener("DOMContentLoaded", () => {
-    fetchOrders();
-    document.querySelector(".search-box input").addEventListener("input", filterOrders);
-    document.querySelector("#secondsearch").addEventListener("input", filterOrders);
-    document.querySelector("#filter-button").addEventListener("change", filterOrders);
-});
 
-async function fetchOrders() {
-    const apiUrl = "https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json";
-    const tableBody = document.getElementById("orderTableBody");
-    
-    try {
-        const response = await fetch(apiUrl);
-        const orders = await response.json();
-        
-        tableBody.innerHTML = "";
-        Object.keys(orders).forEach(orderId => {
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchOrders();
+        document
+          .querySelector(".search-box input")
+          .addEventListener("input", filterOrders);
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchOrders();
+        document
+          .querySelector(".search-box input")
+          .addEventListener("input", filterOrders);
+        document
+          .querySelector("#secondsearch")
+          .addEventListener("input", filterOrders);
+        document
+          .querySelector("#filter-button")
+          .addEventListener("change", filterOrders);
+      });
+
+      async function fetchOrders() {
+        const apiUrl =
+          "https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json";
+        const tableBody = document.getElementById("orderTableBody");
+
+        try {
+          const response = await fetch(apiUrl);
+          const orders = await response.json();
+
+          tableBody.innerHTML = "";
+          Object.keys(orders).forEach((orderId) => {
             const order = orders[orderId];
             const row = document.createElement("tr");
             row.dataset.title = order.title.toLowerCase();
             row.dataset.category = order.category.toLowerCase();
             row.innerHTML = `
-                <td><img src="${order.thumbnail || 'https://via.placeholder.com/50'}" alt="Product" height="40px" width="60"></td>
-                <td>${order.title || 'N/A'}</td>
-                <td>${order.quantity || 'N/A'}</td>
-                <td>${order.category || 'N/A'}</td>
-                <td>${order.status || 'N/A'}</td>
-                <td>$${order.totalPrice || 'N/A'}</td>
-                <td>${order.returnPolicy || 'N/A'}</td>
-                <td><button id="productiditbutton" onclick="openPopup('${orderId}', '${order.thumbnail}', '${order.title}', '${order.status}')">Edit</button></td>
+                <td><img src="${
+                  order.thumbnail || "https://via.placeholder.com/50"
+                }" alt="Product" height="40px" width="60"></td>
+                <td>${order.title || "N/A"}</td>
+                <td>${order.quantity || "N/A"}</td>
+                <td>${order.category || "N/A"}</td>
+                <td>${order.status || "N/A"}</td>
+                <td>$${order.totalPrice || "N/A"}</td>
+                <td>${order.returnPolicy || "N/A"}</td>
+                <td><button id="productiditbutton" onclick="openPopup('${orderId}', '${
+              order.thumbnail
+            }', '${order.title}', '${order.status}')">Edit</button></td>
             `;
             tableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error("Error fetching orders:", error);
+          tableBody.innerHTML =
+            "<tr><td colspan='8'>Failed to load orders</td></tr>";
+        }
+      }
+
+      function filterOrders() {
+        const searchTerm = document
+          .getElementById("secondsearch")
+          .value.toLowerCase();
+        const secondSearchTerm = document
+          .querySelector("#secondsearch")
+          .value.toLowerCase();
+        const selectedCategory = document
+          .querySelector("#filter-button")
+          .value.toLowerCase();
+        const rows = document.querySelectorAll("#orderTableBody tr");
+
+        rows.forEach((row) => {
+          const titleMatch =
+            row.dataset.title.includes(searchTerm) ||
+            row.dataset.title.includes(secondSearchTerm);
+          const categoryMatch =
+            selectedCategory === "" ||
+            row.dataset.category === selectedCategory;
+
+          row.style.display = titleMatch && categoryMatch ? "" : "none";
         });
-    } catch (error) {
-        console.error("Error fetching orders:", error);
-        tableBody.innerHTML = "<tr><td colspan='8'>Failed to load orders</td></tr>";
-    }
-}
+      }
 
-function filterOrders() {
-    const searchTerm = document.getElementById("secondsearch").value.toLowerCase();
-    const secondSearchTerm = document.querySelector("#secondsearch").value.toLowerCase();
-    const selectedCategory = document.querySelector("#filter-button").value.toLowerCase();
-    const rows = document.querySelectorAll("#orderTableBody tr");
+      const handleSearch = (searchTerm) => {
+        const filteredOrders = orders.filter(
+          (order) =>
+            order.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            order.id.toString().includes(searchTerm)
+        );
+        setFilteredOrders(filteredOrders);
+      };
 
-    rows.forEach(row => {
-        const titleMatch = row.dataset.title.includes(searchTerm) || row.dataset.title.includes(secondSearchTerm);
-        const categoryMatch = selectedCategory === "" || row.dataset.category === selectedCategory;
-        
-        row.style.display = titleMatch && categoryMatch ? "" : "none";
-    });
-}
-
-const handleSearch = (searchTerm) => {
-    const filteredOrders = orders.filter(order =>
-        order.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        order.id.toString().includes(searchTerm)
-    );
-    setFilteredOrders(filteredOrders);
-};
-
-
-
-      
       function openPopup(orderId, thumbnail, title, status) {
         document.getElementById("popupThumbnail").src = thumbnail;
         document.getElementById("popupTitle").innerText = title;
@@ -274,21 +301,21 @@ const handleSearch = (searchTerm) => {
         document.getElementById("editPopup").dataset.orderId = orderId;
         document.getElementById("editPopup").classList.add("active");
       }
-      
+
       function closePopup() {
         document.getElementById("editPopup").classList.remove("active");
       }
-      
+
       async function saveOrderStatus() {
         const orderId = document.getElementById("editPopup").dataset.orderId;
         const newStatus = document.getElementById("orderStatus").value;
         const apiUrl = `https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/orders/${orderId}.json`;
-      
+
         try {
           const response = await fetch(apiUrl, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ status: newStatus })
+            body: JSON.stringify({ status: newStatus }),
           });
           if (response.ok) {
             alert("Order status updated successfully");
@@ -302,15 +329,8 @@ const handleSearch = (searchTerm) => {
           alert("Error updating order status");
         }
       }
-      
+
       document.addEventListener("DOMContentLoaded", fetchOrders);
-
-
-
-
-
-      
-      </script>
+    </script>
   </body>
 </html>
-

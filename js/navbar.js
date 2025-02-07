@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (categoriesValue == "all") { }
         if (searchValue) {
             document.querySelector("#search-input").value = "";
-            window.location.href = `/B42_WEB_003_Web-Wizards/users/products/products.html?search=${encodeURIComponent(searchValue)}&category=${encodeURIComponent(categoriesValue)}`;
+            window.location.href = `./users/products/products.html?search=${encodeURIComponent(searchValue)}&category=${encodeURIComponent(categoriesValue)}`;
         }
     });
 
     document.querySelector(".logo").addEventListener('click', () => {
-        window.location.href = "/B42_WEB_003_Web-Wizards/index.html";
+        window.location.href = "../index.html";
     })
 });
