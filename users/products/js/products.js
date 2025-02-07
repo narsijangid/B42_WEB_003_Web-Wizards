@@ -59,15 +59,6 @@ function displayProducts() {
     productSection.appendChild(productListDiv);
 }
 
-document
-    .getElementById("search-button")
-    .addEventListener("click", function () {
-        let searchValue = document.querySelector("input").value;
-        if (searchValue) {
-            window.location.href = `Searchlist.html?search=${encodeURIComponent(searchValue)}`;
-        }
-    });
-
 document.querySelector("button.sort-by").addEventListener("click", () => {
     document.querySelector(".sort-options").classList.toggle("show");
 });
