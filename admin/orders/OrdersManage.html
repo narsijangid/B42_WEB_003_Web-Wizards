@@ -232,8 +232,15 @@ async function fetchOrders() {
                 <td>${order.status || 'N/A'}</td>
                 <td>$${order.totalPrice || 'N/A'}</td>
                 <td>${order.returnPolicy || 'N/A'}</td>
-                <td><button id="productiditbutton" onclick="openPopup('${orderId}', '${order.thumbnail}', '${order.title}', '${order.status}')">Edit</button></td>
-            `;
+                <td><button id="productiditbutton" onclick="openPopup('${orderId}', '${order.thumbnail}', '${order.title}', '${order.status}')">Edit</button>
+                  <button id="productiditbuttons" onclick="viewDetail('${orderId}')">View</button>
+              
+                 
+                  </td>
+
+               
+           
+                `;
             tableBody.appendChild(row);
         });
     } catch (error) {
@@ -303,12 +310,29 @@ const handleSearch = (searchTerm) => {
         }
       }
       
+
+
+
+
+
       document.addEventListener("DOMContentLoaded", fetchOrders);
 
 
+      function openOrderDetail(orderId, thumbnail, title, price, description) {
+            localStorage.setItem("orderDetail", JSON.stringify({
+                orderId, thumbnail, title, price, description
+            }));
+            window.location.href = 'orderdetail.html';
+        }
 
 
 
+
+        function viewDetail(orderId) {
+            window.location.href = `orderdetail.html?orderId=${orderId}`;
+        }
+        
+        document.addEventListener("DOMContentLoaded", fetchOrders);
       
       </script>
   </body>
