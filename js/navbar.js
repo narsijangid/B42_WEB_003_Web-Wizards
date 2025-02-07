@@ -16,5 +16,3 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "B42_WEB_003_Web-Wizards/index.html";
     })
 });
-
-console.log(window.location.pathname+"/");
