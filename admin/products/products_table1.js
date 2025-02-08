@@ -22,9 +22,11 @@ const excludedFields = [
     'minimumOrderQuantity',
     'returnPolicy',
     'warrantyInformation',
-    'shippingInformation'
-    // Removed 'sellerId' to include it in the table
+    'shippingInformation',
+    'tags',          // Corrected field name based on data
+    'brand'          // Corrected field name based on data
 ];
+
 
 async function fetchProducts() {
     try {

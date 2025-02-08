@@ -1,48 +1,59 @@
-// Import and configure Firebase
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
-import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+// Function to add product data to Firebase
+const addProductData = (productData) => {
+  console.log("Sending data to Firebase:", productData);
 
-// Your Firebase Realtime Database URL
-const DATABASE_URL = "https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/";
-
-// Firebase configuration (you may need to add your actual API key and project details)
-const firebaseConfig = {
-    databaseURL: DATABASE_URL
+  fetch('https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(productData),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Product added successfully:", data);
+    alert("Product added successfully!");
+  })
+  .catch(error => {
+    console.error("Error adding product:", error);
+    alert("Error adding product. Check the console for details.");
+  });
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 // Handle form submission
 document.getElementById('submit-btn').addEventListener('click', function () {
-    // Collect form data
-    const formData = new FormData(document.getElementById('product-form'));
+  const linksString = document.getElementById('link-box').value;  // Input value with comma-separated links
+  const linksArray = linksString.split(',').map(link => link.trim())
+  console.log("Add Product button clicked!");
 
-    // Convert form data to JSON format
-    const productData = {};
-    formData.forEach((value, key) => {
-        productData[key] = value;
-    });
+  // Collect form data
+  const formData = {
+    links: linksArray, 
+    title: document.getElementById('title').value,
+    price: document.getElementById('price').value,
+    returnPolicy: document.getElementById('return-policy').value,
+    shippingInfo: document.getElementById('shipping-info').value,
+    stock: document.getElementById('stock').value,
+    tags: document.getElementById('tags').value,
+    warranty: document.getElementById('warranty').value,
+    status: document.getElementById('status').value,
+  };
 
-    // Save data to Firebase
-    saveProductData(productData);
+  console.log("Form data collected:", formData);
 
-    // Optionally, clear the form after submission
-    document.getElementById('product-form').reset();
+  // Add product data to Firebase
+  addProductData(formData);
 
-    alert('Product added successfully!');
+  // Reset the form after submission
+  document.getElementById('product-form').reset();
 });
 
-// Function to save product data to Firebase
-function saveProductData(data) {
-    const productsRef = ref(database, 'products');  // 'products' is the node in the database
-    push(productsRef, data)
-        .then(() => {
-            console.log('Product data saved successfully');
-        })
-        .catch((error) => {
-            console.error('Error saving product data:', error);
-        });
-}
 
+  
+  
+  
