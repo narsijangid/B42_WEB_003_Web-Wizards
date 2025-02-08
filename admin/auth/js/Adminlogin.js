@@ -23,9 +23,9 @@ document.getElementById("login-form").addEventListener("submit", function (event
     }
 
     if (currentUser.length > 0) {
-        sessionStorage.setItem("userEmail", email.value);
+        sessionStorage.setItem("userId", currentUser[0][0]);
         sessionStorage.setItem("isLoggedIn", true);
-        window.location.href = "../dashboard/dashboard.html";
+        window.location.href = "B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html";
     } else {
         alert("Invalid Credentials");
     }

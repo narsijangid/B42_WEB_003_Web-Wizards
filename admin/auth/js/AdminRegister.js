@@ -20,11 +20,11 @@ async function registerUser() {
             body: JSON.stringify(data)
         });
         const result = await response.json();
-
-        sessionStorage.setItem("userEmail", email.value);
+        console.log(result)
+        sessionStorage.setItem("userId", result.name);
         sessionStorage.setItem("isLoggedIn", true);
         alert('User registered successfully');
-        window.location.href = '../dashboard/dashboard.html';
+        window.location.href = 'B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html';
     } catch (error) {
         alert('Error: ' + error.message);
     }
