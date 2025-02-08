@@ -46,21 +46,38 @@ function displayData(sections) {
             productSection.setAttribute("id", "categories-section"); 
             let categoriesContainer = document.createElement("div");
             categoriesContainer.classList.add("categories-container");
-
+        
+            // Map the displayed category names to the actual API category names.
+            let categoryApiMap = {
+                "Vehicles": "vehicle",
+                "Furniture": "furniture",
+                "Home Decoration": "home decoration",
+                "Mobile accessories": "mobile-accessories",
+                "Sunglasses": "sunglasses"
+            };
+        
             section.products.forEach((category, index) => {
                 let categoryDiv = document.createElement("div");
                 categoryDiv.classList.add("category-box");
-
+        
                 categoryDiv.style.background = gradients[index % gradients.length];
-
-                categoryDiv.innerHTML = `
-                    <p>${category.title}</p>
-                `;
+        
+                categoryDiv.innerHTML = `<p>${category.title}</p>`;
+                
+                // Add click event to redirect with the mapped API category name
+                categoryDiv.addEventListener("click", function () {
+                    let apiCategory = categoryApiMap[category.title];
+                    if (apiCategory) {
+                        window.location.href = `B42_WEB_003_Web-Wizards/users/products/products.html?category=${encodeURIComponent(apiCategory)}`;
+                    }
+                });
+                
                 categoriesContainer.appendChild(categoryDiv);
             });
-
+        
             productSection.appendChild(categoriesContainer);
-        } else {
+        }
+         else {
             productSection.setAttribute("id", "product-section"); 
             let productHeader = document.createElement("div");
             productHeader.classList.add("product-header");
@@ -129,3 +146,29 @@ bg1.style.backgroundImage = `url('${wallpapers[index]}')`;
 index++;
 
 setInterval(changeWallpaper, 5000);
+
+document.querySelectorAll(".category-list-div div").forEach((categoryDiv) => {
+    categoryDiv.addEventListener("click", function () {
+        let categoryText = this.querySelector("p").innerText; 
+        
+        // Map UI category names to API category names
+        let categoryMap = {
+            "Men's Shirt": "mens-shirts",
+            "Women's Dress": "womens-dresses",
+            "Beauty": "beauty",
+            "Fragrance": "fragrances",
+            "Groceries": "groceries",
+            "Kitchen Accessories": "kitchen-accessories",
+            "Laptops": "laptops",
+            "Smartphones": "smartphones"
+        };
+
+        let categoryKey = categoryMap[categoryText];
+
+        if (categoryKey) {
+            // Redirect to products.html with category in URL
+            window.location.href = `B42_WEB_003_Web-Wizards/users/products/products.html?category=${encodeURIComponent(categoryKey)}`;
+        }
+    });
+});
+

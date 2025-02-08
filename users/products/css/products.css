@@ -187,3 +187,35 @@ main hr {
 #rate > i {
   color: #eda042;
 }
+
+/* Pagination container */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 5px;
+}
+
+/* Pagination button styles */
+.pagination button {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+/* Active page button style */
+.pagination button.active {
+  background-color: #2b987e;
+  color: #fff;
+  border-color: #2b987e;
+}
