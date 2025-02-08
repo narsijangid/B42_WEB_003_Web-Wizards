@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Admin Form</title>
+    <link rel="stylesheet" href="product-form1.css">
+</head>
+<body>
+    <h1>Product Admin Form</h1>
+    <form id="product-form">
+        <label for="link-box">Thumbnail (comma-separated)</label>
+        <input type="text" id="link-box" name="link-box" placeholder="e.g., https://example1.com, https://example2.com" required>
+
+        <label for="title">Product Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="price">Price ($)</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="return-policy">Return Policy</label>
+        <textarea id="return-policy" name="return_policy"></textarea>
+
+        <label for="shipping-info">Shipping Information</label>
+        <textarea id="shipping-info" name="shipping_info"></textarea>
+
+        <label for="stock">Stock Quantity</label>
+        <input type="number" id="stock" name="stock" required>
+
+        <label for="tags">Tags (e.g., beauty, electronics)</label>
+        <input type="text" id="tags" name="tags">
+
+        <label for="warranty">Warranty</label>
+        <input type="text" id="warranty" name="warranty">
+
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+            <option value="available">Available</option>
+            <option value="out_of_stock">Out of Stock</option>
+            <option value="discontinued">Discontinued</option>
+        </select>
+      </select>
+
+      <button type="button" id="submit-btn">Add Product</button>
+      <button type="button" id="cancel-btn">Cancel</button>
+  </form>
+  
+  <script>
+      // Handle form submission (you can move this to your external JS file)
+      document.getElementById('submit-btn').addEventListener('click', function () {
+          console.log("Add Product button clicked!");
+          alert("Form submitted!");
+      });
+
+      // Handle cancel button click
+      document.getElementById('cancel-btn').addEventListener('click', function () {
+          console.log("Cancel button clicked!");
+          window.location.href = 'product_table.html';  // Replace with your actual redirect URL
+      });
+  </script>
+        
+    </form>
+    
+    <script src="product-form2.js"></script>
+</body>
+</html>

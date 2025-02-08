@@ -1,61 +1,76 @@
-body {
-  font-family: Arial, sans-serif;
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  transition: margin-left 0.3s ease;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
-.sidebar {
-  width: 250px;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
-  height: 100vh;
+.sidebar{
   position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #161828;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
   display: flex;
-  flex-direction: column;
-  padding: 20px;
-  transition: transform 0.3s ease;
+  align-items: center;
 }
-
-.sidebar.closed {
-  transform: translateX(-100%);
+.sidebar .logo-details i{
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 60px;
+  text-align: center
 }
-
-.sidebar h1 {
+.sidebar .logo-details .logo_name{
+  color: #fff;
   font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-weight: 500;
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.sidebar h1 .close-btn {
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.sidebar ul li a {
   text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
+  transition: all 0.4s ease;
 }
-
-.sidebar ul li a i {
-  margin-right: 10px;
+.sidebar .nav-links li a.active{
+  background: #161828;
+}
+.sidebar .nav-links li a:hover{
+  background: #161828;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #161828;
+}
+.sidebar .nav-links li a .links_name{
+  color:white;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .main-content {

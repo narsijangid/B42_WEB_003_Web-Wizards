@@ -1,0 +1,239 @@
+/* Header Styles */
+.header {
+  background-color: #1a202c;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar {
+  background-color: #2d3748;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.delivery-info {
+  font-size: 14px;
+  color: #cbd5e0;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#productCategory {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e0;
+  background-color: #2d3748;
+  color: white;
+}
+
+#searchHeader {
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #2d3748;
+  color: white;
+}
+
+#searchHeader::placeholder {
+  color: #a0aec0;
+}
+
+#searchBtn {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-nav a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header-nav i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 6000%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2d3748;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-product-btn {
+  background-color: #48bb78;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #38a169;
+}
+
+input#searchInput {
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  width: 200px;
+}
+
+select#itemsPerPage {
+  padding: 5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #2d3748;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.page-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.page-btn, button {
+  padding: 8px 12px;
+  margin: 0;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #2d3748;
+  color: white;
+}
+
+.page-btn.active {
+  background-color: #4a5568;
+  color: white;
+}
+
+button:disabled {
+  background-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* Button styles for table actions */
+.qty-btn, .delete-btn {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qty-btn {
+  background-color: #4299e1;
+}
+
+.qty-btn:hover {
+  background-color: #3182ce;
+}
+
+.delete-btn {
+  background-color: #e53e3e;
+}
+
+.delete-btn:hover {
+  background-color: #c53030;
+}
+
+
+
