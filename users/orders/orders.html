@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <title>VogueCart - Order Details Page</title>
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/users/orders/css/orders.css"
+    />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/css/navbar.module.css"
+    />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/css/footer.module.css"
+    />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="strip main-width">
+        <div class="app-download">
+          <i class="ri-smartphone-line"></i>
+          <span>Download VogueCart mobile app</span>
+        </div>
+        <div class="top-head-nav-links">
+          <p class="nav-links">Promo</p>
+          <p class="nav-links">VogueCart news</p>
+          <p class="nav-links">Help & Center</p>
+          <p class="nav-links">Language</p>
+        </div>
+      </div>
+
+      <nav class="main-width">
+        <div class="logo">
+          <img
+            src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="logo"
+          />
+          <p>VOGUECART</p>
+        </div>
+
+        <div id="search-div">
+          <div class="location">
+            <p><i class="ri-map-pin-line"></i> Deliver to</p>
+            <p class="address">Bangalore, India</p>
+          </div>
+
+          <select name="categories" id="categories">
+            <option value="all">All products</option>
+            <option value="beauty">Beauty</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="kitchen-accessories">Kitchen Accessories</option>
+            <option value="laptops">Laptops</option>
+            <option value="mens-shirts">Mens Shirts</option>
+            <option value="mens-shoes">Mens Shoes</option>
+            <option value="mens-watches">Mens Watches</option>
+            <option value="mobile-accessories">Mobile Accessories</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="skin-care">Skin Care</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="sports-accessories">Sports Accessories</option>
+            <option value="sunglasses">Sunglasses</option>
+            <option value="tablets">Tablets</option>
+            <option value="tops">Tops</option>
+            <option value="vehicle">Vehicle</option>
+            <option value="womens-bags">Womens Bags</option>
+            <option value="womens-dresses">Womens Dresses</option>
+            <option value="womens-jewellery">Womens Jewellery</option>
+            <option value="womens-shoes">Womens Shoes</option>
+            <option value="womens-watches">Womens Watches</option>
+          </select>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search product here..."
+          />
+          <button id="search-button"><i class="ri-search-2-line"></i></button>
+        </div>
+
+        <div class="nav-options">
+          <i class="ri-shopping-cart-line"></i>
+          <i class="ri-notification-line"></i>
+          <div class="hr"></div>
+          <div class="user">
+            <i class="ri-user-3-line"></i>
+          </div>
+          <i class="ri-arrow-down-s-fill"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main main-width">
+      <div class="table-controls">
+        <div class="search-bar">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png"
+            alt="Search"
+          />
+          <!-- Replace with your search icon path -->
+          <input id="table-search" type="text" placeholder="Search" />
+        </div>
+
+        <div class="select-wrapper">
+          <select id="filter-button">
+            <option value="all">All</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="orderTableBody"></tbody>
+        </table>
+
+        <div id="pagination"></div>
+      </div>
+
+      <div class="overlay">
+        <div id="order_status_modal">
+          <button id="close_modal_btn" onclick="closeOrderModal()">
+            <i class="ri-close-line"></i>
+          </button>
+          <div class="container">
+            <div class="header">
+              <div class="flex items-center">
+                <img src="" alt="product" id="modal_order_image" />
+                <h2>Order #5913</h2>
+                <div class="details">
+                  <div>
+                    <p>Item</p>
+                    <p id="modal_order_title"></p>
+                  </div>
+                  <div>
+                    <p>Courier</p>
+                    <p>R.P Gossling</p>
+                  </div>
+                  <div>
+                    <p>Order date</p>
+                    <p>14 Jan 2023</p>
+                  </div>
+                  <div>
+                    <p>Address</p>
+                    <p>14 Jan 2023, 15:43:23</p>
+                  </div>
+                </div>
+              </div>
+              <span class="status">In progress</span>
+            </div>
+            <div class="nav">Order Details</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-width">
+      <div class="logo-links">
+        <div class="footer-about">
+          <img
+            src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="Logo"
+          />
+          <h3>
+            Your One-Stop Destination for Everything You Need, Anytime,
+            Anywhere!
+          </h3>
+          <p>VogueCart, 2025.</p>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li class="footer-link-headings">COMPANY</li>
+            <li class="nav-links">About</li>
+            <li class="nav-links">Careers</li>
+            <li class="nav-links">Partners</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">HELP</li>
+            <li class="nav-links">Shipping</li>
+            <li class="nav-links">Payments</li>
+            <li class="nav-links">Cancellations & Returns</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">LEGAL</li>
+            <li class="nav-links">Terms of Service</li>
+            <li class="nav-links">Privacy Policy</li>
+            <li class="nav-links">Cookies Policy</li>
+            <li class="nav-links">Security</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <p>&copy; 2025 VogueCart Inc. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-instagram-fill"></i></a>
+          <a href="#"><i class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="B42_WEB_003_Web-Wizards/users/orders/js/orders.js"></script>
+<script src="B42_WEB_003_Web-Wizards/js/navbar.js"></script>
