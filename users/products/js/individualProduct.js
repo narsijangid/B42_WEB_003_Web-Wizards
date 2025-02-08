@@ -64,6 +64,7 @@ async function addToCart() {
         title: item.title,
         total: item.price * (+quantity.value),
         user_id: item.seller_id,
+        product_id: productId
     }
 
     try {
@@ -94,6 +95,7 @@ async function buyNow() {
         title: item.title,
         total: item.price * (+quantity.value),
         user_id: item.seller_id,
+        product_id: productId
     }
 
     try {
@@ -107,7 +109,7 @@ async function buyNow() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        window.location.href = "/B42_WEB_003_Web-Wizards/users/cart & payment/cartAndPayment.html"
+        window.location.href = "B42_WEB_003_Web-Wizards/users/cartAndpayment/cartAndPayment.html"
     } catch (e) {
         console.error(e);
         alert("Failed to buy product.");

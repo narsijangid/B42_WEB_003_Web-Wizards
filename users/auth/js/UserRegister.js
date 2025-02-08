@@ -1,8 +1,10 @@
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-
 const form = document.getElementById('register-form');
+
+// Get previous path from sessionStorage
+const previousPath = sessionStorage.getItem("previousPath") || ('B42_WEB_003_Web-Wizards/index.html');
 
 async function registerUser() {
     const data = {
@@ -20,11 +22,16 @@ async function registerUser() {
             body: JSON.stringify(data)
         });
         const result = await response.json();
-        console.log(result)
-        sessionStorage.setItem("userId", result.name);
+
+        sessionStorage.setItem("userEmail", email.value);
         sessionStorage.setItem("isLoggedIn", true);
         alert('User registered successfully');
-        window.location.href = 'B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html';
+        
+        // Redirect to the previous path
+        window.location.href = previousPath;
+        
+        // Delete the stored previous path
+        sessionStorage.removeItem("previousPath");
     } catch (error) {
         alert('Error: ' + error.message);
     }
@@ -38,3 +45,8 @@ form.addEventListener('submit', (e) => {
     }
     registerUser();
 });
+
+// Store current path before redirecting to register page
+if (!sessionStorage.getItem("previousPath")) {
+    sessionStorage.setItem("previousPath", document.referrer);
+}

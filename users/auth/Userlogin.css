@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make container a grid */
+.container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; 
+    width: 100%;
+    height: 100vh;
+    gap: 100px;
+    overflow-x: hidden;
+}
+
+/* Left Side: Image Section */
+.image-container {
+    background: url('/B42_WEB_003_Web-Wizards/images/toolxox.com-oPtvcTqeCM.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+/* image text positioning */
+.image-text {
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    right: 20%;
+    bottom: 35%;
+}
+
+/* Right Side */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo  */
+.logo-ribbon {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    gap: 15px;
+    justify-content: left;
+    padding: 10px ;
+    margin-left: 50px ;
+}
+
+/* Logo Styling */
+#logo img {
+    width: 50px;
+    height: 32px;
+     
+}
+
+#logo img:hover {
+    transform: rotate(10deg);
+}
+
+/* VogueCart */
+.voguecart-text {
+    font-size: 27px;
+    color: black;
+    font-weight: bolder;
+}
+
+/* Form Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    background-color: white;
+    width: 100%;
+}
+ 
+
+/* Form */
+form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0;
+    box-sizing: border-box;
+    outline: none;
+     
+}
+input:focus{
+    border-bottom: 1.8px solid black;
+}
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #333;
+    transform: scale(1.02);
+}
+
+/* Google Sign-in Button */
+#sign-up-with-google {
+    background-color: white;
+    color: #050607;
+    border: 1px solid  black;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+#sign-up-with-google:hover {
+    background:  black;
+    color: white;
+    transform: scale(1.01);
+}
+
+#sign-up-with-google i {
+    font-size: 18px;
+    transition: all 0.15s ease;
+}
+
+a {
+    color: black;
+}
+
+/* Forgot Password - Centered in One Line */
+.forgot-password-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot-password {
+    display: inline;  
+    color: grey;
+}
+
+/* Responsive */
+ 
+@media (max-width: 480px) {
+
+    .container {
+        grid-template-columns: 1fr;
+        gap:2px;
+    }
+    .image-container {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo-ribbon {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p, .forgot-password {
+        font-size: 12px;
+    }
+
+    input, button {
+        padding: 8px;
+    }
+
+    .image-text {
+        font-size: 14px;
+        right: 16%;
+        bottom: 10%;
+    }
+    #logo img {
+        width: 40px;
+        height: 28px;
+    }
+}
+
+/* Medium screens (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap:2px;
+    }
+    .image-container {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+    .login-container {
+        width: 80%;
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    .logo-ribbon {
+        margin-left: 30px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    input, button {
+        padding: 10px;
+    }
+
+    .image-text {
+        font-size: 16px;
+        right: 5%;
+        bottom: 55%;
+    }
+    #logo img {
+        width: 45px;
+        height: 30px;
+    }
+}
+
+/* Large tablets & small laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        gap: 50px;
+    }
+    .image-container {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+    .login-container {
+        width: 400px;
+        padding: 40px;
+    }
+
+    .logo-ribbon {
+        margin-left: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    input, button {
+        padding: 12px;
+    }
+
+    .image-text {
+        font-size: 18px;
+        right: 15%;
+        bottom: 30%;
+    }
+    #logo img {
+        width: 50px;
+        height: 32px;
+    }
+
+}
+
+/* Desktop screens (1025px and above) */
+ @media (min-width: 1025px) {
+   
+    .image-text {
+        font-size: 20px;
+        right: 10%;
+        bottom: 50%;
+    }
+  
+ }
+ 
