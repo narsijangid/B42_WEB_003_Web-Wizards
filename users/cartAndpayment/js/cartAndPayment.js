@@ -251,6 +251,7 @@ async function createOrder() {
       })
     );
     alert("Order placed successfully.")
+    window.location.href = "B42_WEB_003_Web-Wizards/index.html";
   } catch (error) {
     console.error("Error fetching cart data:", error);
   }
