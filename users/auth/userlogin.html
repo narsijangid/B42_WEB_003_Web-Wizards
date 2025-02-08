@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VogueCart - User Sign In</title>
+    
+    <link rel="shortcut icon" href="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" type="image/x-icon">
+    <base href="/" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/users/auth/Userlogin.css">
+    <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/css/font.module.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Side: Image Section -->
+        <div class="image-container">
+            <div class="image-text">
+                <h1>Endless Choices <br> One Click Away!</h1>
+            </div>
+        </div>
+        
+        <!-- Right Side: Login Section -->
+        <div class="login-wrapper">
+            <!-- Logo Ribbon (Without BG and Styles) -->
+            <div class="logo-ribbon" style="background: none; padding: 0;">
+                <div id="logo">
+                    <img src="/B42_WEB_003_Web-Wizards/images/VOUGECART_dark.png" alt="Logo">
+                </div>
+                <span class="voguecart-text" style="color: black;">VOGUECART</span>
+            </div>
+
+            <!-- Login Form -->
+            <div class="login-container">
+                <h4>Welcome Back! </h4><br>
+                <p id="line">Don't have an account? 
+                    <a href="/B42_WEB_003_Web-Wizards/users/auth/UserRegister.html" class="signup-link">Create Account</a>
+                </p>
+                <br>
+                
+                <form action="#" method="POST" id="login-form" style="text-align: left; width: 100%; max-width: 350px;">
+                    <input type="email" id="email" name="username" placeholder="Enter your email" required>
+                    <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
+                    <br>
+                    <button type="submit">Sign in</button>
+                    <button type="submit" id="sign-up-with-google">
+                        <i class="ri-google-fill"></i> Login with Google
+                    </button>
+
+                    <div style="text-align: center; margin-top: 10px;">
+                        <p class="forgot-password">Forgot password </p> 
+                        <a href="forgot-password.html" class="forgot-password" style="color: black;"> Click here </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/B42_WEB_003_Web-Wizards/users/auth/js/userlogin.js"></script>
+</body>
+</html>
