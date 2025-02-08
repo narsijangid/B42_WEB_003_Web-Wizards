@@ -150,9 +150,10 @@
           </button>
           <div class="container">
             <div class="header">
+              <span class="status" id="order_status">In progress</span>
               <div class="flex items-center">
                 <img src="" alt="product" id="modal_order_image" />
-                <h2>Order #5913</h2>
+                <h2>Order #<span id="modal_order_sku"></span></h2>
                 <div class="details">
                   <div>
                     <p>Item</p>
@@ -160,21 +161,69 @@
                   </div>
                   <div>
                     <p>Courier</p>
-                    <p>R.P Gossling</p>
+                    <p id="modal_order_seller"></p>
                   </div>
                   <div>
                     <p>Order date</p>
-                    <p>14 Jan 2023</p>
+                    <p id="modal_order_date">14 Jan 2023</p>
                   </div>
                   <div>
-                    <p>Address</p>
-                    <p>14 Jan 2023, 15:43:23</p>
+                    <p>Shipping</p>
+                    <p>FREE Internation Shipping</p>
                   </div>
                 </div>
               </div>
-              <span class="status">In progress</span>
             </div>
-            <div class="nav">Order Details</div>
+            <div class="nav"></div>
+            <div class="modal-order-details-container">
+              <table>
+                <tr>
+                  <td colspan="2">Contact Information</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td id="order_user_email"></td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td id="order_user_phone"></td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td id="order_user_address"></td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td colspan="2">Order Summary</td>
+                </tr>
+                <tr>
+                  <td>Quantity</td>
+                  <td></td>
+                  <td id="order_product_quantity"></td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td></td>
+                  <td id="order_product_subtotal"></td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>(Free shipping)</td>
+                  <td>+ $0.00</td>
+                </tr>
+                <tr>
+                  <td>Discount</td>
+                  <td></td>
+                  <td id="order_product_discount"></td>
+                </tr>
+                <tr id="total_price">
+                  <td>Total</td>
+                  <td></td>
+                  <td id="order_product_final"></td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>

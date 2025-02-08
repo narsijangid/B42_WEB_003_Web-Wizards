@@ -98,8 +98,8 @@ table {
   border-collapse: collapse;
 }
 
-th,
-td {
+th:not(.modal-order-details-container th),
+td:not(.modal-order-details-container td) {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -131,7 +131,7 @@ th {
 
 /* Order Modal section */
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -153,11 +153,16 @@ th {
   border-radius: 0.85rem;
   position: relative;
   display: none;
+  color: #333;
 }
 
 #order_status_modal hr {
   opacity: 0.2;
   margin-bottom: 0.5rem;
+}
+
+#order_status_modal p {
+  color: #969696;
 }
 
 #close_modal_btn {
@@ -171,13 +176,13 @@ th {
   cursor: pointer;
 }
 .header {
-  display: flex;
-  justify-content: space-between;
   align-items: start;
   margin-bottom: 1rem;
   position: relative;
 }
-
+.flex.items-center {
+  width: 100%;
+}
 .header img {
   width: 6rem;
   height: 6rem;
@@ -186,9 +191,11 @@ th {
 }
 .header .details {
   display: grid;
+  max-width: 350px;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1rem;
-  column-gap: 3rem;
+  column-gap: 2rem;
   font-size: 0.85rem;
 }
 .header .details h1 {
@@ -214,14 +221,34 @@ th {
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
-  position: absolute;
-  left: 7rem;
-  top: 0;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 .nav {
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 1rem;
-  color: #2b987e;
-  font-weight: 600;
   border-bottom: 2px solid #e5e7eb;
+}
+
+.modal-order-details-container table {
+  width: 100%;
+}
+
+.modal-order-details-container table td{
+  padding: 0.15rem;
+}
+.modal-order-details-container td[colspan="2"],
+#total_price {
+  font-weight: 600;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+.modal-order-details-container
+  table
+  tr
+  td:not(td[colspan="2"]):not(#total_price td) {
+  color: #969696;
+}
+
+.modal-order-details-container tr td:not(:first-of-type) {
+  text-align: right;
 }
