@@ -14,10 +14,11 @@ let item = [];
         document.getElementById('product_title').textContent = product.title || "N/A";
         document.getElementById('product_rating').innerHTML = `<i class="ri-star-fill"></i> ` + (product.rating.toFixed(1) || "0") + " Ratings";
         document.getElementById('product_review').textContent = (product.reviews.length || "0") + " Reviews";
-        document.getElementById('product_brand').innerHTML = `<span>Brand: </span>${product.brand}`;
+        document.getElementById('product_brand').innerHTML = `<span>Brand: </span>${product.brand || product.category}`;
         document.getElementById('product_category').innerHTML = `<span>Category: </span>${product.category}`;
-        document.getElementById('product_tags').innerHTML = `<span>Condition: </span>${product.tags.join(", ")}`;
+        document.getElementById('product_tags').innerHTML = `<span>Tags: </span>${product.tags.join(", ")}`;
         document.getElementById('product_weight').innerHTML = `<span>Weight: </span>${product.weight * 100} g`;
+        document.getElementById('product_warranty').innerHTML = `<span>Warranty: </span>${product.warrantyInformation}`;
 
         let description = product.description.trim().split(".").map(e => `<li>${e}</li>`);
         let seller = await fetchUser(product.seller_id);

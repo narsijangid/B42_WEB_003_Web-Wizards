@@ -5,6 +5,7 @@ let filters = new Set();
 const filterBtns = document.getElementById("filter-button");
 const pagination = document.getElementById('pagination');
 const tableBody = document.getElementById("orderTableBody");
+const modalImage = document.getElementById("modal_order_image");
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchOrders();
@@ -52,7 +53,7 @@ function displayOrders(orders) {
                     <td>${order[1].category}</td>
                     <td>${order[1].status}</td>
                     <td>${order[1].quantity}</td>
-                    <td>$${order[1].totalPrice}</td>
+                    <td>$${order[1].finalPrice}</td>
                     <td><button class="view-btn" onclick="viewOrderDetails('${order[0]}')">View</button></td>
                 `;
             tableBody.appendChild(row);
@@ -119,12 +120,22 @@ async function viewOrderDetails(orderId) {
         console.log(seller);
         console.log(user);
 
-        document.getElementById("order_status").innerHTML = order.status;
-        document.getElementById("modal_order_image").src = order.thumbnail;
+        document.getElementById("order_status").innerHTML = order.status.split("_").join(" ");
+        modalImage.src = order.thumbnail;
+        modalImage.addEventListener("click", () => console.log("click"))
         document.getElementById("modal_order_title").textContent = order.title;
         document.getElementById("modal_order_sku").textContent = order.sku;
+        document.getElementById("modal_order_seller").textContent = seller.name;
+        document.getElementById("modal_order_date").textContent = order.order_date.split("T")[0];
+        document.getElementById("order_user_email").textContent = user.email;
+        document.getElementById("order_user_phone").textContent = user.phone_number;
+        document.getElementById("order_user_address").textContent = user.address + ", " + user.zipcode;
+        document.getElementById("order_product_quantity").textContent = order.quantity + " item";
+        document.getElementById("order_product_subtotal").textContent = "$" + order.totalPrice;
+        document.getElementById("order_product_discount").textContent = "- $" + (order.totalPrice * order.discountPercentage / 100).toFixed(2);
+        document.getElementById("order_product_final").textContent = "$" + order.finalPrice;
     } catch (err) {
-
+        console.error("Error fetching order details:", err);
     } finally {
         document.querySelector(".overlay").style.display = "flex";
         document.querySelector("#order_status_modal").style.display = "block";

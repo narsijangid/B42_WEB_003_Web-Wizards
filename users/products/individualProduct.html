@@ -136,12 +136,11 @@
             <div class="details">
               <p id="product_brand"></p>
               <p id="product_category"></p>
-              <p id="product_tags">
-                <span>Condition: </span>${product.condition}
-              </p>
+              <p id="product_tags"></p>
             </div>
             <div class="details">
               <p id="product_weight"></p>
+              <p id="product_warranty"></p>
             </div>
           </div>
         </div>
@@ -186,7 +185,13 @@
             <div class="individual-product-order-quantity">
               <div id="product_quantity">
                 <i class="ri-subtract-line" id="removeQty"></i>
-                <input type="number" value="1" min="1" id="quantity_box" readonly />
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  id="quantity_box"
+                  readonly
+                />
                 <i class="ri-add-line" id="addQty"></i>
               </div>
               <p id="product_stock"></p>
@@ -197,7 +202,9 @@
             </div>
             <div class="individual-product-order-btn">
               <button onclick="buyNow()">Buy Now</button>
-              <button onclick="addToCart()"><i class="ri-shopping-cart-fill"></i> Add to Cart</button>
+              <button onclick="addToCart()">
+                <i class="ri-shopping-cart-fill"></i> Add to Cart
+              </button>
             </div>
 
             <hr />
