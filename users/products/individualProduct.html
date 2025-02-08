@@ -105,7 +105,115 @@
         </div>
       </nav>
     </header>
-    <main class="main"></main>
+    <main class="main-width main">
+      <section id="first-section">
+        <div class="individual-product-image">
+          <img src="" id="product_image" />
+        </div>
+        <div id="side_image_container">
+          <img src="" alt="" /><img src="" alt="" /><img src="" alt="" />
+        </div>
+      </section>
+
+      <section id="second-section">
+        <div class="individual-product-intro">
+          <p id="product_sku"></p>
+          <h2 id="product_title"></h2>
+          <div class="indiv-rate-review">
+            <p id="product_rating"></p>
+            <div>&#9679;</div>
+            <div id="product_review"></div>
+          </div>
+        </div>
+
+        <div id="size-container"></div>
+
+        <div class="individual-product-about">
+          <p>About items</p>
+          <hr />
+
+          <div class="product-about-col">
+            <div class="details">
+              <p id="product_brand"></p>
+              <p id="product_category"></p>
+              <p id="product_tags">
+                <span>Condition: </span>${product.condition}
+              </p>
+            </div>
+            <div class="details">
+              <p id="product_weight"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="individual-product-desc">
+          <h4>Description:</h4>
+          <p id="product_description"></p>
+          <p>Chat us if there is anything you need to ask about the product</p>
+        </div>
+
+        <div class="individual-shipping-details">
+          <h4>Shipping Information:</h4>
+          <p>Delivery: <span id="product_delivery"></span></p>
+          <p>Shipping: <span>FREE internetional shipping</span></p>
+          <p>Expected: <span id="product_delivery_time"></span></p>
+        </div>
+
+        <div class="individual-seller-details">
+          <h4>Seller Information:</h4>
+          <div class="seller-info-sec">
+            <div id="seller_img"></div>
+            <div id="seller_info"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="third-section">
+        <div class="discount_payment">
+          <div class="product-discount-card">
+            <div class="discount-card-left">
+              <h3>25% OFF</h3>
+              <p>If order above <span>$250</span></p>
+            </div>
+            <div class="discount-card-right">
+              <p>Until Feb 26, 2025</p>
+            </div>
+          </div>
+
+          <div class="individual-product-order">
+            <h4>Set Order</h4>
+            <hr />
+            <div class="individual-product-order-quantity">
+              <div id="product_quantity">
+                <i class="ri-subtract-line" id="removeQty"></i>
+                <input type="number" value="1" min="1" id="quantity_box" readonly />
+                <i class="ri-add-line" id="addQty"></i>
+              </div>
+              <p id="product_stock"></p>
+            </div>
+            <div class="individual-product-order-price">
+              <p><span>Total Price</span></p>
+              <p id="product_price"></p>
+            </div>
+            <div class="individual-product-order-btn">
+              <button onclick="buyNow()">Buy Now</button>
+              <button onclick="addToCart()"><i class="ri-shopping-cart-fill"></i> Add to Cart</button>
+            </div>
+
+            <hr />
+
+            <div class="chat_share">
+              <p><i class="ri-message-3-fill"></i> Chat Seller</p>
+              <p><i class="ri-share-fill"></i> Share Product</p>
+            </div>
+          </div>
+          <p id="report">
+            Any problem with this product? &nbsp;
+            <span><i class="ri-flag-2-fill"></i> Report</span>
+          </p>
+        </div>
+      </section>
+    </main>
     <footer class="main-width">
       <div class="logo-links">
         <div class="footer-about">
@@ -144,7 +252,7 @@
       </div>
       <hr />
       <div class="copyright">
-        <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
+        <p>&copy; 2025 VogueCart Inc. All rights reserved.</p>
         <div class="footer-socials">
           <a href="#"><i class="ri-facebook-circle-fill"></i></a>
           <a href="#"><i class="ri-twitter-fill"></i></a>
