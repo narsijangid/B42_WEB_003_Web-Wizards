@@ -1,207 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VogueCart - cart and payment</title>
     <base href="/" />
-    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/navbar.module.css" />
-    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/users/cartAndpayment/css/cartAndPayment.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" type="image/x-icon" />
-    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/footer.module.css" />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/css/navbar.module.css"
+    />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/users/cartAndpayment/css/cartAndPayment.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/css/footer.module.css"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header id="header">
-        <div class="strip main-width">
-            <div class="app-download">
-                <i class="ri-smartphone-line"></i>
-                <span>Download VogueCart mobile app</span>
-            </div>
-            <div class="top-head-nav-links">
-                <p class="nav-links">Promo</p>
-                <p class="nav-links">VogueCart news</p>
-                <p class="nav-links">Help & Center</p>
-                <p class="nav-links">Language</p>
-            </div>
+      <div class="strip main-width">
+        <div class="app-download">
+          <i class="ri-smartphone-line"></i>
+          <span>Download VogueCart mobile app</span>
+        </div>
+        <div class="top-head-nav-links">
+          <p class="nav-links">Promo</p>
+          <p class="nav-links">VogueCart news</p>
+          <p class="nav-links">Help & Center</p>
+          <p class="nav-links">Language</p>
+        </div>
+      </div>
+
+      <nav class="main-width">
+        <div class="logo">
+          <img
+            src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="logo"
+          />
+          <p>VOGUECART</p>
         </div>
 
-        <nav class="main-width">
-            <div class="logo">
-                <img src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" alt="logo" />
-                <p>VOGUECART</p>
-            </div>
+        <div id="search-div">
+          <div class="location">
+            <p><i class="ri-map-pin-line"></i> Deliver to</p>
+            <p class="address">Bangalore, India</p>
+          </div>
 
-            <div id="search-div">
-                <div class="location">
-                    <p><i class="ri-map-pin-line"></i> Deliver to</p>
-                    <p class="address">Bangalore, India</p>
-                </div>
+          <select name="categories" id="categories">
+            <option value="all">All products</option>
+            <option value="beauty">Beauty</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="kitchen-accessories">Kitchen Accessories</option>
+            <option value="laptops">Laptops</option>
+            <option value="mens-shirts">Mens Shirts</option>
+            <option value="mens-shoes">Mens Shoes</option>
+            <option value="mens-watches">Mens Watches</option>
+            <option value="mobile-accessories">Mobile Accessories</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="skin-care">Skin Care</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="sports-accessories">Sports Accessories</option>
+            <option value="sunglasses">Sunglasses</option>
+            <option value="tablets">Tablets</option>
+            <option value="tops">Tops</option>
+            <option value="vehicle">Vehicle</option>
+            <option value="womens-bags">Womens Bags</option>
+            <option value="womens-dresses">Womens Dresses</option>
+            <option value="womens-jewellery">Womens Jewellery</option>
+            <option value="womens-shoes">Womens Shoes</option>
+            <option value="womens-watches">Womens Watches</option>
+          </select>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search product here..."
+          />
+          <button id="search-button"><i class="ri-search-2-line"></i></button>
+        </div>
 
-                <select name="categories" id="categories">
-                    <option value="all">All products</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="fragrances">Fragrances</option>
-                    <option value="furniture">Furniture</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="home-decoration">Home Decoration</option>
-                    <option value="kitchen-accessories">Kitchen Accessories</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="mens-shirts">Mens Shirts</option>
-                    <option value="mens-shoes">Mens Shoes</option>
-                    <option value="mens-watches">Mens Watches</option>
-                    <option value="mobile-accessories">Mobile Accessories</option>
-                    <option value="motorcycle">Motorcycle</option>
-                    <option value="skin-care">Skin Care</option>
-                    <option value="smartphones">Smartphones</option>
-                    <option value="sports-accessories">Sports Accessories</option>
-                    <option value="sunglasses">Sunglasses</option>
-                    <option value="tablets">Tablets</option>
-                    <option value="tops">Tops</option>
-                    <option value="vehicle">Vehicle</option>
-                    <option value="womens-bags">Womens Bags</option>
-                    <option value="womens-dresses">Womens Dresses</option>
-                    <option value="womens-jewellery">Womens Jewellery</option>
-                    <option value="womens-shoes">Womens Shoes</option>
-                    <option value="womens-watches">Womens Watches</option>
-                </select>
-                <input type="text" id="search-input" placeholder="Search product here..." />
-                <button id="search-button"><i class="ri-search-2-line"></i></button>
-            </div>
-
-            <div class="nav-options">
-                <i class="ri-shopping-cart-line"></i>
-                <i class="ri-notification-line"></i>
-                <div class="hr"></div>
-                <div class="user">
-                    <i class="ri-user-3-line"></i>
-                </div>
-                <i class="ri-arrow-down-s-fill"></i>
-            </div>
-        </nav>
+        <div class="nav-options">
+          <i class="ri-shopping-cart-line"></i>
+          <i class="ri-notification-line"></i>
+          <div class="hr"></div>
+          <div class="user">
+            <i class="ri-user-3-line"></i>
+          </div>
+          <i class="ri-arrow-down-s-fill"></i>
+        </div>
+      </nav>
     </header>
 
     <main id="cart-payment-main">
+      <section id="cart">
+        <h3>Product Information & Review</h3>
+        <p>
+          By placing your order, you agree to VogueCart's
+          <a href="#">Privacy and Policy</a>.
+        </p>
+        <!-- product container for dynamic data-->
+        <div id="products-container"></div>
 
-        <section id="cart">
-            <h3>Product Information & Review</h3>
-            <p>By placing your order, you agree to VogueCart's <a href="#">Privacy and Policy</a>.</p>
-            <!-- product container for dynamic data-->
-            <div id="products-container"></div>
+        <h3>Delivery Shipping</h3>
+        <div class="delivery-option">
+          <div class="fast-delivery">
+            <input type="radio" id="fast" name="delivery" value="fast" />
+            <label class="delivery-label" for="fast"
+              >$4.99 - Fast Delivery <strong>(Recommend)</strong></label
+            >
+          </div>
+          <div class="delivery-info">
+            <img
+              src="https://www.citypng.com/public/uploads/preview/fedex-delivery-company-logo-hd-png-701751694777675nnuoypsg8a.png"
+              alt="Fedex"
+            />
+          </div>
+        </div>
+        <div class="delivery-option">
+          <div class="fast-delivery">
+            <input
+              type="radio"
+              id="free"
+              name="delivery"
+              value="free"
+              checked
+            />
+            <label class="delivery-label" for="free">Free Delivery</label>
+          </div>
+          <div class="delivery-info">
+            <img
+              src="https://cdn.worldvectorlogo.com/logos/dhl-1.svg"
+              alt="Fedex"
+            />
+          </div>
+        </div>
+      </section>
 
-            <h3>Delivery Shipping</h3>
-            <div class="delivery-option">
-                <div class="fast-delivery">
-                    <input type="radio" id="fast" name="delivery" value="fast">
-                    <label class="delivery-label" for="fast">$4.99 - Fast Delivery <strong>(Recommend)</strong></label>
-                </div>
-                <div class="delivery-info">
-                    <img src="https://www.citypng.com/public/uploads/preview/fedex-delivery-company-logo-hd-png-701751694777675nnuoypsg8a.png"
-                        alt="Fedex">
-                </div>
-            </div>
-            <div class="delivery-option">
-                <div class="fast-delivery">
-                    <input type="radio" id="free" name="delivery" value="free" checked>
-                    <label class="delivery-label" for="free">Free Delivery</label>
-                </div>
-                <div class="delivery-info">
-                    <img src="https://cdn.worldvectorlogo.com/logos/dhl-1.svg" alt="Fedex">
-                </div>
-            </div>
-        </section>
+      <section id="payment">
+        <h3>Payment Details</h3>
+        <p>Complete your purchase by providing your payment details.</p>
 
-        <section id="payment">
-            <h3>Payment Details</h3>
-            <p>Complete your purchase by providing your payment details.</p>
+        <label class="payment-label" for="email">Email address</label>
+        <input
+          type="email"
+          class="payment-input"
+          placeholder="VogueCart@gmail.com"
+        />
 
-            <label class="payment-label" for="email">Email address</label>
-            <input type="email" class="payment-input" placeholder="VogueCart@gmail.com">
+        <label class="card-details-label" for="name">Address</label>
+        <input
+          class="payment-input"
+          type="text"
+          id="name"
+          placeholder="123, 4th Cross, 5th Main, Bangalore"
+        />
+        <label class="card-details-label" for="name">Phone No.</label>
+        <input
+          class="payment-input"
+          type="tel"
+          id="card-number"
+          placeholder="+(91) 9876543210"
+        />
+        <label class="card-details-label" for="name">Pin-code</label>
+        <input
+          class="payment-input"
+          type="text"
+          id="expiry"
+          placeholder="560001"
+        />
 
+        <div class="payment-options-div">
+          <div class="payment-options">
+            <input type="radio" id="card" name="payment" value="card" checked />
+            <label class="payment-label-1" for="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqW0GmKKiS_XGBbPgetnOof5_3bUDPsMrxt0yztuMvWwYYKPee"
+            /></label>
+            <label class="payment-label-2" for="card">UPI</label>
+            <label class="payment-label-3" for="card">
+              <img
+                src="https://i.pinimg.com/originals/60/5a/bd/605abdb7af3405c6b20a426b1e128322.png"
+              />
+              <img
+                src="https://e7.pngegg.com/pngimages/332/615/png-clipart-phonepe-india-unified-payments-interface-india-purple-violet-thumbnail.png"
+              />
+              <img
+                src="https://www.citypng.com/public/uploads/preview/hd-paytm-logo-transparent-background-701751694706616oo59sshkej.png"
+              />
+            </label>
+          </div>
+        </div>
 
-            <label class="card-details-label" for="name">Address</label>
-            <input class="payment-input" type="text" id="name" placeholder="123, 4th Cross, 5th Main, Bangalore">
-            <label class="card-details-label" for="name">Phone No.</label>
-            <input class="payment-input" type="tel" id="card-number" placeholder="+(91) 9876543210">
-            <label class="card-details-label" for="name">Pin-code</label>
-            <input class="payment-input" type="text" id="expiry" placeholder="560001">
-            
-            <div class="payment-options-div">
-                <div class="payment-options">
-                    <input type="radio" id="card" name="payment" value="card" checked>
-                    <label class="payment-label-1" for="card"> <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqW0GmKKiS_XGBbPgetnOof5_3bUDPsMrxt0yztuMvWwYYKPee" /></label>
-                    <label class="payment-label-2" for="card">UPI</label>
-                    <label class="payment-label-3" for="card">
-                        <img src="https://i.pinimg.com/originals/60/5a/bd/605abdb7af3405c6b20a426b1e128322.png" />
-                        <img
-                            src="https://e7.pngegg.com/pngimages/332/615/png-clipart-phonepe-india-unified-payments-interface-india-purple-violet-thumbnail.png" />
-                        <img
-                            src="https://www.citypng.com/public/uploads/preview/hd-paytm-logo-transparent-background-701751694706616oo59sshkej.png" />
-                    </label>
-                </div>
-            </div>
+        <p>Payment is secure and encrypted</p>
 
-            <p>Payment is secure and encrypted</p>
+        <div class="summary">
+          <p>Sub Total <span id="sub-total">$0.00</span></p>
+          <p>Discount <span id="discount">- $0.00</span></p>
+          <p>Total <strong id="total-price">$0.00</strong></p>
+        </div>
 
-            <div class="summary">
-                <p>Sub Total <span id="sub-total">$358.00</span></p>
-                <p>Discount <span id="discount">$0</span></p>
-                <p>Total <strong id="total-price">$358.00</strong></p>
-            </div>
-
-            <button id="pay-btn">Pay Now</button>
-        </section>
+        <button id="pay-btn">Pay Now</button>
+      </section>
     </main>
     <footer class="main-width">
-        <div class="logo-links">
-            <div class="footer-about">
-                <img src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" alt="Logo" />
-                <h3>
-                    Your One-Stop Destination for Everything You Need, Anytime,
-                    Anywhere!
-                </h3>
-                <p>VogueCart, 2025.</p>
-            </div>
+      <div class="logo-links">
+        <div class="footer-about">
+          <img
+            src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+            alt="Logo"
+          />
+          <h3>
+            Your One-Stop Destination for Everything You Need, Anytime,
+            Anywhere!
+          </h3>
+          <p>VogueCart, 2025.</p>
+        </div>
 
-            <div class="footer-links">
-                <ul>
-                    <li class="footer-link-headings">COMPANY</li>
-                    <li class="nav-links">About</li>
-                    <li class="nav-links">Careers</li>
-                    <li class="nav-links">Partners</li>
-                </ul>
-                <ul>
-                    <li class="footer-link-headings">HELP</li>
-                    <li class="nav-links">Shipping</li>
-                    <li class="nav-links">Payments</li>
-                    <li class="nav-links">Cancellations & Returns</li>
-                </ul>
-                <ul>
-                    <li class="footer-link-headings">LEGAL</li>
-                    <li class="nav-links">Terms of Service</li>
-                    <li class="nav-links">Privacy Policy</li>
-                    <li class="nav-links">Cookies Policy</li>
-                    <li class="nav-links">Security</li>
-                </ul>
-            </div>
+        <div class="footer-links">
+          <ul>
+            <li class="footer-link-headings">COMPANY</li>
+            <li class="nav-links">About</li>
+            <li class="nav-links">Careers</li>
+            <li class="nav-links">Partners</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">HELP</li>
+            <li class="nav-links">Shipping</li>
+            <li class="nav-links">Payments</li>
+            <li class="nav-links">Cancellations & Returns</li>
+          </ul>
+          <ul>
+            <li class="footer-link-headings">LEGAL</li>
+            <li class="nav-links">Terms of Service</li>
+            <li class="nav-links">Privacy Policy</li>
+            <li class="nav-links">Cookies Policy</li>
+            <li class="nav-links">Security</li>
+          </ul>
         </div>
-        <hr />
-        <div class="copyright">
-            <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-                <a href="#"><i class="ri-twitter-fill"></i></a>
-                <a href="#"><i class="ri-instagram-fill"></i></a>
-                <a href="#"><i class="ri-youtube-fill"></i></a>
-            </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-instagram-fill"></i></a>
+          <a href="#"><i class="ri-youtube-fill"></i></a>
         </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
 
 <script src="/B42_WEB_003_Web-Wizards/users/cartAndpayment/js/cartAndPayment.js"></script>
