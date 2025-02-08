@@ -4,7 +4,7 @@ const password = document.getElementById('password');
 const form = document.getElementById('register-form');
 
 // Get previous path from sessionStorage
-const previousPath = sessionStorage.getItem("previousPath") || '../dashboard/dashboard.html';
+const previousPath = sessionStorage.getItem("previousPath") || ('B42_WEB_003_Web-Wizards/index.html');
 
 async function registerUser() {
     const data = {
