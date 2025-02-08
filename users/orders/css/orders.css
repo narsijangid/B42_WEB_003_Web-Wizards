@@ -1,0 +1,254 @@
+.main.main-width {
+  margin-block: 2rem;
+  min-height: 360px;
+}
+
+.view-btn {
+  background-color: #2b987e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.view-btn:hover {
+  background-color: #216e5c;
+}
+
+.view-btn:active {
+  background-color: #216e5c;
+  transform: scale(0.98);
+}
+
+#filter-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 8px;
+  padding: 0.5rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+/* Parent wrapper for styling */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Right-side dropdown icon */
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #606060;
+  pointer-events: none;
+}
+
+/* table styling */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  position: relative;
+  width: 250px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 5px 10px 5px 35px; /* Left padding for icon space */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.search-bar img {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+}
+
+.table-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th:not(.modal-order-details-container th),
+td:not(.modal-order-details-container td) {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f1f8f4;
+}
+
+#pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+#pagination button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pagination button.active {
+  background-color: #161828;
+  color: white;
+}
+
+/* Order Modal section */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+}
+
+#order_status_modal {
+  background-color: white;
+  padding: 1rem;
+  font-size: 0.85rem;
+  min-width: 350px;
+  border-radius: 0.85rem;
+  position: relative;
+  display: none;
+  color: #333;
+}
+
+#order_status_modal hr {
+  opacity: 0.2;
+  margin-bottom: 0.5rem;
+}
+
+#order_status_modal p {
+  color: #969696;
+}
+
+#close_modal_btn {
+  position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  top: 0;
+  right: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header {
+  align-items: start;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.flex.items-center {
+  width: 100%;
+}
+.header img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.425rem;
+  border: 1px solid #c1c1c18e;
+}
+.header .details {
+  display: grid;
+  max-width: 350px;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 2rem;
+  font-size: 0.85rem;
+}
+.header .details h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+.header .details > div > p:first-of-type {
+  margin: 0.25rem 0;
+  color: #4b5563;
+}
+
+.header .details > div > p:last-of-type {
+  margin: 0.25rem 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.header .status {
+  background-color: #aefccca1;
+  color: #2b987e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.nav {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.modal-order-details-container table {
+  width: 100%;
+}
+
+.modal-order-details-container table td{
+  padding: 0.15rem;
+}
+.modal-order-details-container td[colspan="2"],
+#total_price {
+  font-weight: 600;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+.modal-order-details-container
+  table
+  tr
+  td:not(td[colspan="2"]):not(#total_price td) {
+  color: #969696;
+}
+
+.modal-order-details-container tr td:not(:first-of-type) {
+  text-align: right;
+}

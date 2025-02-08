@@ -3,20 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VogueCart - cart and payment</title>
     <base href="/" />
-    <title>VogueCart - Searched Product Lists</title>
     <link
       rel="stylesheet"
       href="B42_WEB_003_Web-Wizards/css/navbar.module.css"
     />
-    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
     <link
       rel="stylesheet"
-      href="B42_WEB_003_Web-Wizards/css/footer.module.css"
-    />
-    <link
-      rel="stylesheet"
-      href="B42_WEB_003_Web-Wizards/users/products/css/products.css"
+      href="B42_WEB_003_Web-Wizards/users/cartAndpayment/css/cartAndPayment.css"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
@@ -27,7 +22,12 @@
       href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/css/footer.module.css"
+    />
   </head>
+
   <body>
     <header id="header">
       <div class="strip main-width">
@@ -105,129 +105,125 @@
       </nav>
     </header>
 
-    <main class="main-width">
-      <div class="filter-sort">
-        <div id="search-value-display"></div>
+    <main id="cart-payment-main">
+      <section id="cart">
+        <h3>Product Information & Review</h3>
+        <p>
+          By placing your order, you agree to VogueCart's
+          <a href="#">Privacy and Policy</a>.
+        </p>
+        <!-- product container for dynamic data-->
+        <div id="products-container"></div>
 
-        <div class="sort-by">
-          <button class="sort-by">SORT BY <i class="ri-add-fill"></i></button>
-
-          <div class="sort-options">
-            <div class="sort-option">
-              <input type="radio" name="sort-by" id="sort-by-price-asc" />&nbsp;
-              <label for="sort-by-price-asc">Price: Low to High</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-price-desc"
-              />&nbsp;
-              <label for="sort-by-price-desc">Price: High to Low</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-rating-asc"
-              />&nbsp;
-              <label for="sort-by-rating-asc">Ratings: Low to High</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-rating-desc"
-              />&nbsp;
-              <label for="sort-by-rating-desc">Ratings: High to Low</label>
-            </div>
+        <h3>Delivery Shipping</h3>
+        <div class="delivery-option">
+          <div class="fast-delivery">
+            <input type="radio" id="fast" name="delivery" value="fast" />
+            <label class="delivery-label" for="fast"
+              >$4.99 - Fast Delivery <strong>(Recommend)</strong></label
+            >
+          </div>
+          <div class="delivery-info">
+            <img
+              src="https://www.citypng.com/public/uploads/preview/fedex-delivery-company-logo-hd-png-701751694777675nnuoypsg8a.png"
+              alt="Fedex"
+            />
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="display-section">
-        <div class="filter-section">
-          <div class="rating-filter">
-            <h4>Filter by Ratings</h4>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-4-above" name="ratings-filter" />
-              <label for="star-4-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-3-above" name="ratings-filter" />
-              <label for="star-3-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-2-above" name="ratings-filter" />
-              <label for="star-2-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-1-above" name="ratings-filter" />
-              <label for="star-1-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
+        <div class="delivery-option">
+          <div class="fast-delivery">
+            <input
+              type="radio"
+              id="free"
+              name="delivery"
+              value="free"
+              checked
+            />
+            <label class="delivery-label" for="free">Free Delivery</label>
           </div>
-
-          <hr />
-          <div class="price-filter">
-            <h4>Filter by Price</h4>
-            <div class="price-filter-option">
-              <input type="radio" id="price-25-above" name="price-filter" />
-              <label for="price-25-above"> $25 &amp; above </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-50-above" name="price-filter" />
-              <label for="price-50-above"> $50 &amp; above </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-75-above" name="price-filter" />
-              <label for="price-75-above"> $75 &amp; above </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-100-above" name="price-filter" />
-              <label for="price-100-above"> $100 &amp; above </label>
-            </div>
+          <div class="delivery-info">
+            <img
+              src="https://cdn.worldvectorlogo.com/logos/dhl-1.svg"
+              alt="Fedex"
+            />
           </div>
         </div>
-        <div id="product-section"></div>
-      </div>
+      </section>
 
-      <div id="product-section"></div>
+      <form id="payment">
+        <h3>Payment Details</h3>
+        <p>Complete your purchase by providing your payment details.</p>
+        <label class="payment-label" for="email">Email address</label>
+        <input
+          type="email"
+          class="payment-input"
+          placeholder="VogueCart@gmail.com"
+          required
+          autocomplete="none"
+        />
+
+        <label class="card-details-label" for="name">Phone No.</label>
+        <input
+          class="payment-input"
+          type="tel"
+          id="card-number"
+          placeholder="+(91) 9876543210"
+          required
+          autocomplete="none"
+        />
+
+        <label class="card-details-label" for="name">Address</label>
+        <input
+          class="payment-input"
+          type="text"
+          id="name"
+          placeholder="123, 4th Cross, 5th Main, Bangalore"
+          required
+          autocomplete="none"
+        />
+
+        <label class="card-details-label" for="name">Pin-code</label>
+        <input
+          class="payment-input"
+          type="text"
+          id="expiry"
+          placeholder="560001"
+          required
+          autocomplete="none"
+        />
+
+        <div class="payment-options-div">
+          <div class="payment-options">
+            <input type="radio" id="card" name="payment" value="card" checked />
+            <label class="payment-label-1" for="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqW0GmKKiS_XGBbPgetnOof5_3bUDPsMrxt0yztuMvWwYYKPee"
+            /></label>
+            <label class="payment-label-2" for="card">UPI</label>
+            <label class="payment-label-3" for="card">
+              <img
+                src="https://i.pinimg.com/originals/60/5a/bd/605abdb7af3405c6b20a426b1e128322.png"
+              />
+              <img
+                src="https://e7.pngegg.com/pngimages/332/615/png-clipart-phonepe-india-unified-payments-interface-india-purple-violet-thumbnail.png"
+              />
+              <img
+                src="https://www.citypng.com/public/uploads/preview/hd-paytm-logo-transparent-background-701751694706616oo59sshkej.png"
+              />
+            </label>
+          </div>
+        </div>
+
+        <p>Payment is secure and encrypted</p>
+
+        <div class="summary">
+          <p>Sub Total <span id="sub-total">$0.00</span></p>
+          <p>Discount <span id="discount">- $0.00</span></p>
+          <p>Total <strong id="total-price">$0.00</strong></p>
+        </div>
+
+        <button id="pay-btn" type="submit">Pay Now</button>
+      </form>
     </main>
     <footer class="main-width">
       <div class="logo-links">
@@ -267,7 +263,7 @@
       </div>
       <hr />
       <div class="copyright">
-        <p>&copy; 2025 VogueCart Inc. All rights reserved.</p>
+        <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
         <div class="footer-socials">
           <a href="#"><i class="ri-facebook-circle-fill"></i></a>
           <a href="#"><i class="ri-twitter-fill"></i></a>
@@ -276,8 +272,8 @@
         </div>
       </div>
     </footer>
-
-    <script src="B42_WEB_003_Web-Wizards/users/products/js/products.js"></script>
-    <script src="B42_WEB_003_Web-Wizards/js/navbar.js"></script>
   </body>
 </html>
+
+<script src="/B42_WEB_003_Web-Wizards/users/cartAndpayment/js/cartAndPayment.js"></script>
+<script src="B42_WEB_003_Web-Wizards/js/navbar.js"></script>

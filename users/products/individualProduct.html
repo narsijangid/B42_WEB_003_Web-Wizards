@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
-    <title>VogueCart - Searched Product Lists</title>
+    <title>VogueCart - Individual Product Page</title>
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/users/products/css/individualProduct.css"
+    />
     <link
       rel="stylesheet"
       href="B42_WEB_003_Web-Wizards/css/navbar.module.css"
     />
-    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
     <link
       rel="stylesheet"
       href="B42_WEB_003_Web-Wizards/css/footer.module.css"
     />
-    <link
-      rel="stylesheet"
-      href="B42_WEB_003_Web-Wizards/users/products/css/products.css"
-    />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -28,6 +28,7 @@
       type="image/x-icon"
     />
   </head>
+
   <body>
     <header id="header">
       <div class="strip main-width">
@@ -104,130 +105,121 @@
         </div>
       </nav>
     </header>
+    <main class="main-width main">
+      <section id="first-section">
+        <div class="individual-product-image">
+          <img src="" id="product_image" />
+        </div>
+        <div id="side_image_container">
+          <img src="" alt="" /><img src="" alt="" /><img src="" alt="" />
+        </div>
+      </section>
 
-    <main class="main-width">
-      <div class="filter-sort">
-        <div id="search-value-display"></div>
-
-        <div class="sort-by">
-          <button class="sort-by">SORT BY <i class="ri-add-fill"></i></button>
-
-          <div class="sort-options">
-            <div class="sort-option">
-              <input type="radio" name="sort-by" id="sort-by-price-asc" />&nbsp;
-              <label for="sort-by-price-asc">Price: Low to High</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-price-desc"
-              />&nbsp;
-              <label for="sort-by-price-desc">Price: High to Low</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-rating-asc"
-              />&nbsp;
-              <label for="sort-by-rating-asc">Ratings: Low to High</label>
-            </div>
-            <div class="sort-option">
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-rating-desc"
-              />&nbsp;
-              <label for="sort-by-rating-desc">Ratings: High to Low</label>
-            </div>
+      <section id="second-section">
+        <div class="individual-product-intro">
+          <p id="product_sku"></p>
+          <h2 id="product_title"></h2>
+          <div class="indiv-rate-review">
+            <p id="product_rating"></p>
+            <div>&#9679;</div>
+            <div id="product_review"></div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="display-section">
-        <div class="filter-section">
-          <div class="rating-filter">
-            <h4>Filter by Ratings</h4>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-4-above" name="ratings-filter" />
-              <label for="star-4-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-3-above" name="ratings-filter" />
-              <label for="star-3-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-2-above" name="ratings-filter" />
-              <label for="star-2-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="star-1-above" name="ratings-filter" />
-              <label for="star-1-above">
-                <span>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </span>
-                &nbsp; &amp; above
-              </label>
-            </div>
-          </div>
 
+        <div id="size-container"></div>
+
+        <div class="individual-product-about">
+          <p>About items</p>
           <hr />
-          <div class="price-filter">
-            <h4>Filter by Price</h4>
-            <div class="price-filter-option">
-              <input type="radio" id="price-25-above" name="price-filter" />
-              <label for="price-25-above"> $25 &amp; above </label>
+
+          <div class="product-about-col">
+            <div class="details">
+              <p id="product_brand"></p>
+              <p id="product_category"></p>
+              <p id="product_tags"></p>
             </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-50-above" name="price-filter" />
-              <label for="price-50-above"> $50 &amp; above </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-75-above" name="price-filter" />
-              <label for="price-75-above"> $75 &amp; above </label>
-            </div>
-            <div class="rating-filter-option">
-              <input type="radio" id="price-100-above" name="price-filter" />
-              <label for="price-100-above"> $100 &amp; above </label>
+            <div class="details">
+              <p id="product_weight"></p>
+              <p id="product_warranty"></p>
             </div>
           </div>
         </div>
-        <div id="product-section"></div>
-      </div>
 
-      <div id="product-section"></div>
+        <div class="individual-product-desc">
+          <h4>Description:</h4>
+          <p id="product_description"></p>
+          <p>Chat us if there is anything you need to ask about the product</p>
+        </div>
+
+        <div class="individual-shipping-details">
+          <h4>Shipping Information:</h4>
+          <p>Delivery: <span id="product_delivery"></span></p>
+          <p>Shipping: <span>FREE internetional shipping</span></p>
+          <p>Expected: <span id="product_delivery_time"></span></p>
+        </div>
+
+        <div class="individual-seller-details">
+          <h4>Seller Information:</h4>
+          <div class="seller-info-sec">
+            <div id="seller_img"></div>
+            <div id="seller_info"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="third-section">
+        <div class="discount_payment">
+          <div class="product-discount-card">
+            <div class="discount-card-left">
+              <h3>25% OFF</h3>
+              <p>If order above <span>$250</span></p>
+            </div>
+            <div class="discount-card-right">
+              <p>Until Feb 26, 2025</p>
+            </div>
+          </div>
+
+          <div class="individual-product-order">
+            <h4>Set Order</h4>
+            <hr />
+            <div class="individual-product-order-quantity">
+              <div id="product_quantity">
+                <i class="ri-subtract-line" id="removeQty"></i>
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  id="quantity_box"
+                  readonly
+                />
+                <i class="ri-add-line" id="addQty"></i>
+              </div>
+              <p id="product_stock"></p>
+            </div>
+            <div class="individual-product-order-price">
+              <p><span>Total Price</span></p>
+              <p id="product_price"></p>
+            </div>
+            <div class="individual-product-order-btn">
+              <button onclick="buyNow()">Buy Now</button>
+              <button onclick="addToCart()">
+                <i class="ri-shopping-cart-fill"></i> Add to Cart
+              </button>
+            </div>
+
+            <hr />
+
+            <div class="chat_share">
+              <p><i class="ri-message-3-fill"></i> Chat Seller</p>
+              <p><i class="ri-share-fill"></i> Share Product</p>
+            </div>
+          </div>
+          <p id="report">
+            Any problem with this product? &nbsp;
+            <span><i class="ri-flag-2-fill"></i> Report</span>
+          </p>
+        </div>
+      </section>
     </main>
     <footer class="main-width">
       <div class="logo-links">
@@ -276,8 +268,8 @@
         </div>
       </div>
     </footer>
-
-    <script src="B42_WEB_003_Web-Wizards/users/products/js/products.js"></script>
-    <script src="B42_WEB_003_Web-Wizards/js/navbar.js"></script>
   </body>
 </html>
+
+<script src="B42_WEB_003_Web-Wizards/users/products/js/individualProduct.js"></script>
+<script src="B42_WEB_003_Web-Wizards/js/navbar.js"></script>
