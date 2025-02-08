@@ -3,6 +3,7 @@ let orders = [];
     const res = await fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json");
     const data = await res.json();
     orders = Object.entries(data);
+    console.log(orders)
     document.getElementById("total_order").textContent = orders.length;
     document.getElementById("total_revenue").textContent = "$" + orders.reduce((a, b) => a[1].finalPrice + b[1].finalPrice);
 

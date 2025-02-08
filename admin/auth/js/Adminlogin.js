@@ -12,12 +12,9 @@ fetchUserDetails();
 
 document.getElementById("login-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log(users)
     let currentUser = users.filter(user => user[1].email === email.value);
-
-    console.log(email.value, password.value)
-
-    if (currentUser.length === 0 || currentUser[0][1].password !== password.value) {
+    console.log(currentUser)
+    if (currentUser.length === 0 || currentUser[0][1].password != password.value) {
         alert("Invalid Credentials");
         return;
     }

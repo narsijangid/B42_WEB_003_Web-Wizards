@@ -150,7 +150,7 @@
         </div>
       </section>
 
-      <section id="payment">
+      <form id="payment">
         <h3>Payment Details</h3>
         <p>Complete your purchase by providing your payment details.</p>
 
@@ -159,6 +159,18 @@
           type="email"
           class="payment-input"
           placeholder="VogueCart@gmail.com"
+          required
+          autocomplete="none"
+        />
+
+        <label class="card-details-label" for="name">Phone No.</label>
+        <input
+          class="payment-input"
+          type="tel"
+          id="card-number"
+          placeholder="+(91) 9876543210"
+          required
+          autocomplete="none"
         />
 
         <label class="card-details-label" for="name">Address</label>
@@ -167,20 +179,18 @@
           type="text"
           id="name"
           placeholder="123, 4th Cross, 5th Main, Bangalore"
+          required
+          autocomplete="none"
         />
-        <label class="card-details-label" for="name">Phone No.</label>
-        <input
-          class="payment-input"
-          type="tel"
-          id="card-number"
-          placeholder="+(91) 9876543210"
-        />
+
         <label class="card-details-label" for="name">Pin-code</label>
         <input
           class="payment-input"
           type="text"
           id="expiry"
           placeholder="560001"
+          required
+          autocomplete="none"
         />
 
         <div class="payment-options-div">
@@ -213,8 +223,8 @@
           <p>Total <strong id="total-price">$0.00</strong></p>
         </div>
 
-        <button id="pay-btn">Pay Now</button>
-      </section>
+        <button id="pay-btn" type="submit">Pay Now</button>
+      </form>
     </main>
     <footer class="main-width">
       <div class="logo-links">
