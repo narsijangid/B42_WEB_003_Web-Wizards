@@ -72,11 +72,6 @@ body {
     height: 32px;
      
 }
-
-#logo img:hover {
-    transform: rotate(10deg);
-}
-
 /* VogueCart */
 .voguecart-text {
     font-size: 27px;
