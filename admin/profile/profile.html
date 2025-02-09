@@ -3,54 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>Admin Profile</title>
+    <link rel="icon" type="image/x-icon" href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/css/footer.module.css"/>
+    <base href="/" />
+    <title>VougeCart - Admin Profile</title>
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+    <link rel="stylesheet"  href="/B42_WEB_003_Web-Wizards/admin/css/admin.navbar.module.css"/>
     <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/admin/css/profile.css">
 </head>
 <body>
-  
-    <div class="container">
-
-        <div class="card">
-            <div class="row">
-                <div class="sidebar">
-                    <h2>My Profile</h2>
-                </div>
-                <div class="content">
-                    
-                    <!-- Full Name & Role Section -->
-                    <div class="section">
-                        <div class="profile">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQvqX-dSMRnzah05vOBryDQ54m6E0MxgbyAQ&s.jpg" alt="Profile Picture" class="avatar">
-                            <p class="full-name">John Doe</p>
-                            <p class="role">Admin</p>
+  <!-- header  -->
+  <header class="sidebar">
+    <div class="logo-details">
+      <img
+        src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+        alt="Dashboard Logo"
+      />
+      <p style="color: white">VOUGECART</p>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a
+          href="B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html"
+          class="active"
+        >
+          <i class="ri-dashboard-fill"></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="B42_WEB_003_Web-Wizards/admin/products/products.html">
+          <i class="ri-archive-line"></i>
+          <span class="links_name">Product</span>
+        </a>
+      </li>
+      <li>
+        <a href="B42_WEB_003_Web-Wizards/admin/orders/Orderslist.html">
+          <i class="ri-list-unordered"></i>
+          <span class="links_name">Order list</span>
+        </a>
+      </li>
+      <li>
+        <a href="B42_WEB_003_Web-Wizards/admin/profile/profile.html">
+          <i class="ri-user-3-line"></i>
+          <span class="links_name">Profile</span>
+        </a>
+      </li>
+      <li id="log_out">
+        <a href="B42_WEB_003_Web-Wizards/admin/auth/Adminlogin.html">
+          <i class="ri-logout-circle-line"></i>
+          <span class="links_name">Log out</span>
+        </a>
+      </li>
+    </ul>
+  </header>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class="ri-menu-fill sidebarBtn"></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="profile-details">
+        <img
+          src="https://imgs.search.brave.com/J5-KJNoclGIgO9mgbMuULm8xw_ri-hvqZYOyhc50Q64/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzE3LzM0LzY3/LzM2MF9GXzIxNzM0/Njc4Ml83WHBDVHQ4/YkxOSnF2VkFhRFpK/d3Zaam0wZXBRbWo2/ai5qcGc"
+          alt="Admin"
+        />
+        <span id="admin_name"></span>
+        <i class="bx bx-chevron-down"></i>
+      </div>
+    </nav>
+</section>   
+ 
+  <!-- profile container -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="layout-row">
+                 <h2>My Profile</h2>
+                <div class="profile-content">
+                    <div class="info-section">
+                        <div class="user-info">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQvqX-dSMRnzah05vOBryDQ54m6E0MxgbyAQ&s.jpg" alt="Admin Picture" class="user-avatar">
+                            <p class="user-name">John Doe</p>
+                            <p class="user-role">Admin</p>
                         </div>
                     </div>
-                    
-                    <hr>
 
-                    <!-- Personal Information Section -->
-                    <div class="section">
-                        <h3>Personal Information</h3>
-                        <div class="form">
-                            <div class="form-group">
+                    <div class="info-section">
+                        <h3>Personal Info</h3>
+                        <div class="info-form">
+                            <div class="input-group">
                                 <label>First Name</label>
-                                <input type="text" class="input" placeholder="Enter First Name">
+                                <input type="text" class="text-input" name="firstName"  placeholder="Enter First Name">
                             </div>
-                            <div class="form-group">
+                            <div class="input-group">
                                 <label>Last Name</label>
-                                <input type="text" class="input" placeholder="Enter Last Name">
+                                <input type="text" class="text-input" name="lastName"  placeholder="Enter Last Name">
                             </div>
-                            <div class="form-group">
+                            <div class="input-group">
                                 <label>Email</label>
-                                <input type="email" class="input" placeholder="Enter Email">
+                                <input type="email" class="text-input" name="email"  placeholder="Enter Email">
                             </div>
-                            <div class="form-group">
-                                <label>Mobile Number</label>
-                                <input type="text" class="input" placeholder="Enter Mobile Number">
+                            <div class="input-group">
+                                <label>Mobile</label>
+                                <input type="text" class="text-input" name="number"  placeholder="Enter Mobile Number">
                             </div>
-                            <div class="form-group full-width">
+                            <div class="input-group full-width">
                                 <label>Gender</label>
-                                <select class="input">
+                                <select class="text-input" name="gender">
                                     <option value="">Select Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -61,19 +122,17 @@
                         </div>
                     </div>
                     
-                    <hr>
 
-                    <!-- Address Section -->
-                    <div class="section">
-                        <h3>Address</h3>
-                        <div class="form">
-                            <div class="form-group">
+                    <div class="info-section">
+                        <h3>Address Details</h3>
+                        <div class="info-form">
+                            <div class="input-group">
                                 <label>City / State</label>
-                                <input type="text" class="input" placeholder="Enter Address">
+                                <input type="text" class="text-input" name="address" placeholder="Enter Address">
                             </div>
-                            <div class="form-group">
+                            <div class="input-group">
                                 <label>Zip Code</label>
-                                <input type="text" class="input" placeholder="Enter Zip Code">
+                                <input type="text" class="text-input" name="zipCode" placeholder="Enter Zip Code">
                             </div>
                         </div>
                     </div>
@@ -82,16 +141,17 @@
             </div>
         </div>
         
-        <div class="actions">
-            <button class="btn edit">Edit</button>
-            <button class="btn save">Save Changes</button>
-            <button class="btn cancel">Cancel</button>
+        <div class="form-actions">
+            <button class="btn modify">Edit</button>
+            <button class="btn update">Save</button>
+            <button class="btn discard">Cancel</button>
         </div>
     </div>
 
-
-  
-<script src="/B42_WEB_003_Web-Wizards/js/profile.js"></script>
+</section>
+ 
+<script src="/B42_WEB_003_Web-Wizards/admin/js/profile.js"></script>
+<script src="/B42_WEB_003_Web-Wizards/admin/js/admin.navbar.js"></script>
 
 </body>
 </html>
