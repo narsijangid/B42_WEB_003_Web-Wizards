@@ -81,7 +81,7 @@
   min-height: 100vh;
   width: calc(100% - 240px);
   left: 240px;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 .sidebar.active ~ .home-section {
   width: calc(100% - 60px);
@@ -100,7 +100,7 @@
   z-index: 100;
   padding: 0 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 }
 .sidebar.active ~ .home-section nav {
   left: 60px;
