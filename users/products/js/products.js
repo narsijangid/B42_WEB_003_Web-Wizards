@@ -21,18 +21,18 @@ searchInput.value = searchValue;
 fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products.json")
     .then((response) => response.json())
     .then((data) => {
-        products = Object.values(data);
+        products = Object.entries(data);
 
         // If a specific category is passed (not "all"), filter by that category
         if (category !== "all") {
-            searchedProducts = products.filter(p => p.category === category);
+            searchedProducts = products.filter(p => p[1].category === category);
         } else {
             searchedProducts = products;
         }
         
         // If a search value exists, filter the products further based on the title
         if (searchValue) {
-            searchedProducts = searchedProducts.filter(p => p.title.toLowerCase().includes(searchValue.toLowerCase()));
+            searchedProducts = searchedProducts.filter(p => p[1].title.toLowerCase().includes(searchValue.toLowerCase()));
         }
         
         currentPage = 1; // Reset page before display
@@ -74,14 +74,18 @@ function displayProducts() {
         itemsToDisplay.forEach((item) => {
             let productDiv = document.createElement("div");
             productDiv.innerHTML = `
-                <img src="${item.thumbnail}" />
-                <p id="item-category">${item.category}</p>
-                <h3>${item.title}</h3>
+                <img src="${item[1].thumbnail}" />
+                <p id="item-category">${item[1].category}</p>
+                <h3>${item[1].title}</h3>
                 <div id="price-rating">
-                    <p id="price">$${item.price}</p>
-                    <p id="rate"><i class="ri-star-s-fill"></i>${item.rating}</p>
+                    <p id="price">$${item[1].price}</p>
+                    <p id="rate"><i class="ri-star-s-fill"></i>${item[1].rating}</p>
                 </div>`;
+                productDiv.addEventListener("click", () => {
+                    window.location.href = "B42_WEB_003_Web-Wizards/users/products/individualProduct.html?id=" + item[0];
+                });
             productListDiv.appendChild(productDiv);
+
         });
         productSection.appendChild(productListDiv);
 
