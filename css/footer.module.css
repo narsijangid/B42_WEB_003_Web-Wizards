@@ -38,12 +38,17 @@ footer .logo-links {
   list-style-type: none;
 }
 
-.footer-links ul li:not(:first-of-type) {
+.footer-links ul li:not(:first-of-type),
+.footer-links ul li a {
   margin-block: 1rem;
   white-space: wrap;
   font-size: 0.85rem;
   color: #c1c1c1;
-  max-width: 100px;
+  max-width: 120px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
 }
 
 footer hr {

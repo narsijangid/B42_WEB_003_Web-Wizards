@@ -93,9 +93,38 @@
           <i class="ri-shopping-cart-line"></i>
           <i class="ri-notification-line"></i>
           <div class="hr"></div>
-          <        <a href="/B42_WEB_003_Web-Wizards/users/auth/userlogin.html"><i class="ri-user-3-line"></i></a>
+
+          <div id="user_btn">
+            <div class="user">
+              <i class="ri-user-3-line"></i>
+            </div>
+            <i class="ri-arrow-down-s-fill"></i>
+
+            <div id="user_dropdown_sec">
+              <a href="B42_WEB_003_Web-Wizards/users/orders/orders.html">
+                <i class="ri-shopping-bag-4-line"></i>
+                <span>Orders</span>
+              </a>
+              <hr />
+              <div id="logout_btn">
+                <i class="ri-logout-circle-line"></i>
+                <span>Log out</span>
+              </div>
+            </div>
           </div>
-          <i class="ri-arrow-down-s-fill"></i>
+
+          <div id="auth_btns">
+            <button
+              onclick="window.location.href='B42_WEB_003_Web-Wizards/users/auth/userlogin.html'"
+            >
+              Login
+            </button>
+            <button
+              onclick="window.location.href='B42_WEB_003_Web-Wizards/users/auth/UserRegister.html'"
+            >
+              Sign up
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -181,6 +210,11 @@
             <li class="nav-links">About</li>
             <li class="nav-links">Careers</li>
             <li class="nav-links">Partners</li>
+            <li class="nav-links">
+              <a href="/B42_WEB_003_Web-Wizards/admin/auth/Adminlogin.html"
+                >Join as a partner</a
+              >
+            </li>
           </ul>
           <ul>
             <li class="footer-link-headings">HELP</li>
