@@ -201,138 +201,28 @@ a {
   cursor: pointer;
 }
 
-/* Responsive */
-
-@media (max-width: 480px) {
-  .container {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .image-container {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-  }
-  .login-container {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .logo-ribbon {
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  h4 {
-    font-size: 16px;
-  }
-
-  p,
-  .forgot-password {
-    font-size: 12px;
-  }
-
-  input,
-  button {
-    padding: 8px;
-  }
-
-  .image-text {
-    font-size: 14px;
-    right: 16%;
-    bottom: 10%;
-  }
-  #logo img {
-    width: 40px;
-    height: 28px;
+@media (max-width: 1300px) {
+  .login-wrapper {
+    width: 550px;
   }
 }
 
-/* Medium screens (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .image-container {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-  }
-  .login-container {
-    width: 80%;
-    max-width: 400px;
-    padding: 30px;
-  }
-
-  .logo-ribbon {
-    margin-left: 30px;
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-
-  input,
-  button {
-    padding: 10px;
-  }
-
+@media (max-width: 1140px) {
   .image-text {
-    font-size: 16px;
-    right: 5%;
-    bottom: 55%;
+    padding: 2rem;
   }
-  #logo img {
-    width: 45px;
-    height: 30px;
+
+  .image-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .login-wrapper {
+    width: fit-content;
   }
 }
 
-/* Large tablets & small laptops (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    gap: 50px;
-  }
-  .image-container {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-  }
-  .login-container {
-    width: 400px;
-    padding: 40px;
-  }
-
-  .logo-ribbon {
-    margin-left: 20px;
-  }
-
-  h4 {
-    font-size: 20px;
-  }
-
-  input,
-  button {
-    padding: 12px;
-  }
-
-  .image-text {
-    font-size: 18px;
-    right: 15%;
-    bottom: 30%;
-  }
-  #logo img {
-    width: 50px;
-    height: 32px;
-  }
-}
-
-/* Desktop screens (1025px and above) */
-@media (min-width: 1025px) {
-  .image-text {
-    font-size: 20px;
-    right: 10%;
-    bottom: 50%;
+@media (max-width: 768px) {
+  .login-wrapper {
+    width: 100%;
   }
 }
