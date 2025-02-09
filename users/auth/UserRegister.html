@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VogueCart - User Sign Up</title>
-    
-    <link rel="shortcut icon" href="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VogueCart - User Sign up</title>
+
+    <link
+      rel="shortcut icon"
+      href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png"
+      type="image/x-icon"
+    />
     <base href="/" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/users/auth/UserRegister.css">
-    <link rel="stylesheet" href="/B42_WEB_003_Web-Wizards/css/font.module.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="B42_WEB_003_Web-Wizards/users/auth/css/Userlogin.css"
+    />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+  </head>
 
-<body>
+  <body>
+    <a href="B42_WEB_003_Web-Wizards/index.html"
+      ><p class="homepage">&LeftArrow; Back to homepage</p></a
+    >
     <div class="container">
-        <!-- Right Side: Login Section  -->
-        <div class="login-wrapper">  
-            <div class="logo-ribbon" style="background: none; padding: 0;">
-                <div id="logo">
-                    <img src="/B42_WEB_003_Web-Wizards/images/VOUGECART_dark.png" alt="Logo">
-                </div>
-                <span class="voguecart-text" style="color: black;">VOGUECART</span>
-            </div>
-
-            <!-- Login Form -->
-            <div class="login-container">
-                <h4>First Visit </h4><br>
-                <p id="line">Already have an account? 
-                    <a href="/B42_WEB_003_Web-Wizards/users/auth/Userlogin.html" class="signup-link">Sign in</a>
-                </p>
-                <br>
-                
-                <form action="#" method="POST" id="register-form" style="text-align: left; width: 100%; max-width: 350px;">
-                    <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
-                  />
-                    <input 
-                    type="email" 
-                    id="email" 
-                    name="username" 
-                    placeholder="Enter your email" required>
-                    <input
-                     type="password"
-                     id="password" 
-                     name="password" 
-                     placeholder="Password"
-                     minlength="8" required>
-                    <br>
-                    <button type="submit">Sign up</button>
-                    <button type="submit" id="sign-up-with-google">
-                        <i class="ri-google-fill"></i> Login with Google
-                    </button>
-
-                    <div style="text-align: center; margin-top: 10px;">
-                        <p class="forgot-password">Forgot password </p> 
-                        <a href="forgot-password.html" class="forgot-password" style="color: black;"> Click here </a>
-                    </div>
-                </form>
-            </div>
+      <!-- Left Side: Image Section -->
+      <div class="image-container">
+        <img
+          src="B42_WEB_003_Web-Wizards/images/toolxox.com-oPtvcTqeCM.jpg"
+          alt=""
+        />
+        <div class="image-text">
+          <h1>
+            Your ultimate shopping destination for fashion, style, and savings.
+          </h1>
+          <p>
+            Voguecart is your ultimate online shopping destination for trendy
+            fashion. Enjoy a wide selection, secure checkout, and fast delivery,
+            all in one place. Shop effortlessly and stay stylish with Voguecart.
+          </p>
         </div>
+      </div>
 
-        <!-- Left Side: Image Section -->
-        <div class="image-container">
-            <div class="image-text">
-                <h1>Endless Choices <br> One Click Away!</h1>
-                 <br>
-                <h1>Click </h1>
-                <h1>Buy</h1>
-                <h1>Smile!</h1>
-            </div>
+      <!-- Right Side: Login Section -->
+      <div class="login-wrapper">
+        <!-- Login Form -->
+        <div class="login-container">
+          <div class="logo-ribbon">
+            <img
+              src="B42_WEB_003_Web-Wizards/images/VOUGECART_dark.png"
+              alt="Logo"
+            />
+            <span class="voguecart-text" style="color: black">VOGUECART</span>
+          </div>
+
+          <h4>New to here?</h4>
+          <br />
+          <p id="line">
+            Already have an account?
+            <a
+              href="B42_WEB_003_Web-Wizards/users/auth/userlogin.html"
+              class="signup-link"
+              >Sign up here</a
+            >, <br />To the data? Just one click away now.
+          </p>
+
+          <form action="#" method="POST" id="register-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter full name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="username"
+              placeholder="Enter your email"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              minlength="8"
+              required
+            />
+            <button type="submit">Sign up</button>
+            <button type="submit" id="sign-up-with-google">
+              <i class="ri-google-fill"></i> Login with Google
+            </button>
+
+            <p class="forgot-password">
+              Forgot password <span>Click here</span>
+            </p>
+          </form>
         </div>
+      </div>
     </div>
-    
-    <script src="/B42_WEB_003_Web-Wizards/users/auth/js/UserRegister.js"></script>
-</body>
+  </body>
+  <script src="B42_WEB_003_Web-Wizards/users/auth/js/UserRegister.js"></script>
 </html>

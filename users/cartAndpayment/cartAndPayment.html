@@ -97,10 +97,38 @@
           <i class="ri-shopping-cart-line"></i>
           <i class="ri-notification-line"></i>
           <div class="hr"></div>
-          <div class="user">
-            <i class="ri-user-3-line"></i>
+
+          <div id="user_btn">
+            <div class="user">
+              <i class="ri-user-3-line"></i>
+            </div>
+            <i class="ri-arrow-down-s-fill"></i>
+
+            <div id="user_dropdown_sec">
+              <a href="B42_WEB_003_Web-Wizards/users/orders/orders.html">
+                <i class="ri-shopping-bag-4-line"></i>
+                <span>Orders</span>
+              </a>
+              <hr />
+              <div id="logout_btn">
+                <i class="ri-logout-circle-line"></i>
+                <span>Log out</span>
+              </div>
+            </div>
           </div>
-          <i class="ri-arrow-down-s-fill"></i>
+
+          <div id="auth_btns">
+            <button
+              onclick="window.location.href='B42_WEB_003_Web-Wizards/users/auth/userlogin.html'"
+            >
+              Login
+            </button>
+            <button
+              onclick="window.location.href='B42_WEB_003_Web-Wizards/users/auth/UserRegister.html'"
+            >
+              Sign up
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -150,15 +178,26 @@
         </div>
       </section>
 
-      <section id="payment">
+      <form id="payment">
         <h3>Payment Details</h3>
         <p>Complete your purchase by providing your payment details.</p>
-
         <label class="payment-label" for="email">Email address</label>
         <input
           type="email"
           class="payment-input"
           placeholder="VogueCart@gmail.com"
+          required
+          autocomplete="none"
+        />
+
+        <label class="card-details-label" for="name">Phone No.</label>
+        <input
+          class="payment-input"
+          type="tel"
+          id="card-number"
+          placeholder="+(91) 9876543210"
+          required
+          autocomplete="none"
         />
 
         <label class="card-details-label" for="name">Address</label>
@@ -167,20 +206,18 @@
           type="text"
           id="name"
           placeholder="123, 4th Cross, 5th Main, Bangalore"
+          required
+          autocomplete="none"
         />
-        <label class="card-details-label" for="name">Phone No.</label>
-        <input
-          class="payment-input"
-          type="tel"
-          id="card-number"
-          placeholder="+(91) 9876543210"
-        />
+
         <label class="card-details-label" for="name">Pin-code</label>
         <input
           class="payment-input"
           type="text"
           id="expiry"
           placeholder="560001"
+          required
+          autocomplete="none"
         />
 
         <div class="payment-options-div">
@@ -213,8 +250,8 @@
           <p>Total <strong id="total-price">$0.00</strong></p>
         </div>
 
-        <button id="pay-btn">Pay Now</button>
-      </section>
+        <button id="pay-btn" type="submit">Pay Now</button>
+      </form>
     </main>
     <footer class="main-width">
       <div class="logo-links">
@@ -236,6 +273,11 @@
             <li class="nav-links">About</li>
             <li class="nav-links">Careers</li>
             <li class="nav-links">Partners</li>
+            <li class="nav-links">
+              <a href="/B42_WEB_003_Web-Wizards/admin/auth/Adminlogin.html"
+                >Join as a partner</a
+              >
+            </li>
           </ul>
           <ul>
             <li class="footer-link-headings">HELP</li>
@@ -254,7 +296,7 @@
       </div>
       <hr />
       <div class="copyright">
-        <p>&copy; 2025 VagueCart Inc. All rights reserved.</p>
+        <p>&copy; 2025 VogueCart Inc. All rights reserved.</p>
         <div class="footer-socials">
           <a href="#"><i class="ri-facebook-circle-fill"></i></a>
           <a href="#"><i class="ri-twitter-fill"></i></a>

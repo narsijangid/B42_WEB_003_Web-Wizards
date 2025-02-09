@@ -10,22 +10,34 @@ async function fetchUserDetails() {
 
 fetchUserDetails();
 
+
+
 // Save previous URL only if it's not the login page itself
 if (document.referrer && !document.referrer.includes("userlogin.html")) {
     localStorage.setItem("previousURL", document.referrer);
 }
+
+let isLoggedIn = sessionStorage.getItem("isLoggedIn");
+console.log(isLoggedIn)
+if (isLoggedIn) {
+    let previousURL = localStorage.getItem("previousURL");
+    localStorage.removeItem("previousURL");
+    window.location.href = previousURL;
+}
+
 
 document.getElementById("login-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     let currentUser = users.filter(user => user[1].email === email.value);
 
-    if (currentUser.length === 0 || currentUser[0][1].password !== password.value) {
+    if (currentUser.length === 0 || currentUser[0][1].password != password.value) {
         alert("Invalid Credentials");
         return;
     }
+    console.log(currentUser)
 
-    sessionStorage.setItem("userEmail", email.value);
+    sessionStorage.setItem("userId", JSON.stringify(currentUser[0][0]));
     sessionStorage.setItem("isLoggedIn", true);
 
     // Retrieve the previous URL

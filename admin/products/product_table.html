@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products Table</title>
+    <link rel="stylesheet" href="product_table.css">
+    <link rel="icon" type="image/x-icon" href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <base href="/" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/admin/css/admin.navbar.module.css" />
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Products Table</h1>
+        <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="Search products by any field...">
+         
+            <div>
+                <label for="itemsPerPage">Rows:</label>
+                <select id="itemsPerPage">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+                <a href="products_form.html" class="add-product-btn">Add Product</a>
+            </div>
+        </div>
+
+        <table id="productsTable">
+            <thead>
+                <tr id="table-headers"></tr>
+            </thead>
+            <tbody id="productsBody"></tbody>
+        </table>
+
+        <div id="pagination" class="pagination"></div>
+    </div>
+
+    <script src="products_table1.js"></script>
+</body>
+
+</html>

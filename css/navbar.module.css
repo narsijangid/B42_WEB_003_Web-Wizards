@@ -10,6 +10,8 @@ nav {
   background-color: #161828;
   color: white;
   padding: 2rem 5rem !important;
+  position: relative;
+  z-index: 10;
 }
 
 .strip {
@@ -157,4 +159,82 @@ nav {
 
 .nav-options .ri-arrow-down-s-fill {
   margin-left: -1rem;
+}
+
+#user_btn {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+  position: relative;
+}
+
+#user_dropdown_sec {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: white;
+  font-size: 1rem;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+#user_dropdown_sec a {
+  text-decoration: none;
+  display: inline-block;
+  color: #949494;
+  padding: 0.25rem 0.5rem;
+}
+
+#user_dropdown_sec hr {
+  margin-block: 0.5rem;
+  opacity: 0.2;
+}
+
+#logout_btn {
+  color: red;
+  padding: 0.25rem 0.5rem;
+}
+
+#auth_btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#auth_btns button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+#auth_btns button:active {
+  scale: 0.99;
+}
+
+#auth_btns button:first-of-type {
+  border: 2px solid #2b987e;
+  background-color: #2b987e;
+  color: white;
+}
+
+#auth_btns button:first-of-type:hover {
+  border: 2px solid #1d6958;
+  background-color: #1d6958;
+}
+
+#auth_btns button:last-of-type {
+  border: 2px solid #2b987e;
+  color: #2b987e;
+  background-color: transparent;
+}
+
+#auth_btns button:last-of-type:hover {
+  background-color: #1d69595b;
 }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Admin Form</title>
+    <link rel="stylesheet" href="product-form1.css">
+    <link rel="icon" type="image/x-icon" href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <base href="/" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/admin/css/admin.navbar.module.css" />
+</head>
+
+<body>
+    <header class="sidebar">
+        <div class="logo-details">
+            <img src="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" alt="Dashboard Logo" />
+            <p>VOUGECART</p>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html">
+                    <i class="ri-dashboard-fill"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="B42_WEB_003_Web-Wizards/admin/products/products.html" class="active">
+                    <i class="ri-archive-line"></i>
+                    <span class="links_name">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="B42_WEB_003_Web-Wizards/admin/orders/Orderslist.html">
+                    <i class="ri-list-unordered"></i>
+                    <span class="links_name">Order list</span>
+                </a>
+            </li>
+            <li>
+                <a href="B42_WEB_003_Web-Wizards/admin/profile/profile.html">
+                    <i class="ri-user-3-line"></i>
+                    <span class="links_name">Profile</span>
+                </a>
+            </li>
+            <li id="log_out">
+                <a href="B42_WEB_003_Web-Wizards/admin/auth/Adminlogin.html">
+                    <i class="ri-logout-circle-line"></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class="ri-menu-fill sidebarBtn"></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="profile-details">
+                <img src="https://imgs.search.brave.com/J5-KJNoclGIgO9mgbMuULm8xw_ri-hvqZYOyhc50Q64/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzE3LzM0LzY3/LzM2MF9GXzIxNzM0/Njc4Ml83WHBDVHQ4/YkxOSnF2VkFhRFpK/d3Zaam0wZXBRbWo2/ai5qcGc"
+                    alt="Admin" />
+                <span id="admin_name"></span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+        </nav>
+
+        <h1>Product Admin Form</h1>
+        <form id="product-form">
+            <label for="link-box">Thumbnail (comma-separated)</label>
+            <input type="text" id="link-box" name="link-box"
+                placeholder="e.g., https://example1.com, https://example2.com" required>
+
+            <label for="title">Product Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="price">Price ($)</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="return-policy">Return Policy</label>
+            <textarea id="return-policy" name="return_policy"></textarea>
+
+            <label for="shipping-info">Shipping Information</label>
+            <textarea id="shipping-info" name="shipping_info"></textarea>
+
+            <label for="stock">Stock Quantity</label>
+            <input type="number" id="stock" name="stock" required>
+
+            <label for="tags">Tags (e.g., beauty, electronics)</label>
+            <input type="text" id="tags" name="tags">
+
+            <label for="warranty">Warranty</label>
+            <input type="text" id="warranty" name="warranty">
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="available">Available</option>
+                <option value="out_of_stock">Out of Stock</option>
+                <option value="discontinued">Discontinued</option>
+            </select>
+            </select>
+
+            <button type="button" id="submit-btn">Add Product</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+        </form>
+
+        <script>
+            // Handle form submission (you can move this to your external JS file)
+            document.getElementById('submit-btn').addEventListener('click', function () {
+                console.log("Add Product button clicked!");
+                alert("Form submitted!");
+            });
+
+            // Handle cancel button click
+            document.getElementById('cancel-btn').addEventListener('click', function () {
+                console.log("Cancel button clicked!");
+                window.location.href = 'product_table.html';  // Replace with your actual redirect URL
+            });
+        </script>
+
+        </form>
+    </section>
+    <script src="B42_WEB_003_Web-Wizards/admin/js/admin.navbar.js"></script>
+    <script src="product-form2.js"></script>
+</body>
+
+</html>

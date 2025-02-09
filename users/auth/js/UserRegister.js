@@ -4,7 +4,14 @@ const password = document.getElementById('password');
 const form = document.getElementById('register-form');
 
 // Get previous path from sessionStorage
-const previousPath = sessionStorage.getItem("previousPath") || ('B42_WEB_003_Web-Wizards/index.html');
+const previousURL = sessionStorage.getItem("previousURL") || ('B42_WEB_003_Web-Wizards/index.html');
+
+let isLoggedIn = sessionStorage.getItem("isLoggedIn");
+if (isLoggedIn) {
+    localStorage.removeItem("previousURL");
+    window.location.href = previousURL;
+}
+
 
 async function registerUser() {
     const data = {
@@ -13,6 +20,7 @@ async function registerUser() {
         password: password.value
     };
 
+    console.log(data)
     try {
         const response = await fetch('https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/users.json', {
             method: 'POST',
@@ -23,17 +31,17 @@ async function registerUser() {
         });
         const result = await response.json();
 
-        sessionStorage.setItem("userEmail", email.value);
+        sessionStorage.setItem("userId", result.name);
         sessionStorage.setItem("isLoggedIn", true);
         alert('User registered successfully');
-        
+
         // Redirect to the previous path
-        window.location.href = previousPath;
-        
+        window.location.href = previousURL;
+
         // Delete the stored previous path
-        sessionStorage.removeItem("previousPath");
+        sessionStorage.removeItem("previousURL");
     } catch (error) {
-        alert('Error: ' + error.message);
+        console.log('Error: ' + error.message);
     }
 }
 
@@ -47,6 +55,6 @@ form.addEventListener('submit', (e) => {
 });
 
 // Store current path before redirecting to register page
-if (!sessionStorage.getItem("previousPath")) {
-    sessionStorage.setItem("previousPath", document.referrer);
+if (!sessionStorage.getItem("previousURL")) {
+    sessionStorage.setItem("previousURL", document.referrer);
 }
