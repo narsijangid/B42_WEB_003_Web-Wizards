@@ -53,23 +53,14 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li a.active{
-  background: #161828;
+  background: white;
+  color: #161828;
 }
 .sidebar .nav-links li a:hover{
   background: #161828;
+  color: white;
 }
-.sidebar .nav-links li i{
-  min-width: 60px;
-  text-align: center;
-  font-size: 18px;
-  color: #161828;
-}
-.sidebar .nav-links li a .links_name{
-  color:white;
-  font-size: 15px;
-  font-weight: 400;
-  white-space: nowrap;
-}
+
 .sidebar .nav-links .log_out{
   position: absolute;
   bottom: 0;
@@ -82,6 +73,10 @@
   width: calc(100% - 240px);
   left: 240px;
   transition: all 0.5s ease;
+  padding-bottom: 30px;
+}
+.home-section>h1{
+  padding-top: 100px;
 }
 .sidebar.active ~ .home-section{
   width: calc(100% - 60px);
