@@ -194,6 +194,7 @@
    .home-section .home-content{
      position: relative;
      padding-top: 104px;
+     padding-bottom: 30px;
      padding-left: 30px;
      padding-right: 30px;
    
@@ -485,8 +486,17 @@
         font-weight: 1000;
         color: #2c2b2b;
         margin-left: 10px;
-        
+      
     }
+    @media (max-width: 750px){
+      .order-grid {
+        grid-template-columns: repeat(1, 1fr); 
+        justify-items: center; 
+      }
+      .thumbnail {
+        max-width: 300px;
+    }
+  }
 </style>
 
   </head>
