@@ -1,4 +1,13 @@
-/* Make container a grid */
+.homepage {
+  color: #a3a3a3;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .container {
   display: flex;
   overflow-x: hidden;
