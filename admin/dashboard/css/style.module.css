@@ -82,15 +82,17 @@
 .home-content .sales-boxes {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 40px;
   /* padding: 0 20px; */
 }
 
 /* left box */
 .home-content .sales-boxes .recent-sales {
-  width: 65%;
+  width: 100%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px;
+ 
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -98,6 +100,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 20px;
 }
 .sales-boxes .box .title {
   font-size: 1.5rem;
@@ -105,19 +108,18 @@
   /* margin-bottom: 10px; */
 }
 
-.sales-boxes .box {
-  overflow: auto;
-}
 
-.sales-boxes .box::-webkit-scrollbar {
+
+/* .sales-boxes .box::-webkit-scrollbar {
   appearance: none;
   width: 1px;
-}
+} */
 
 .recent-sales table {
   width: 100%;
+ 
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 #sales_details th,
@@ -147,7 +149,7 @@
   padding: 20px 30px;
   margin: 0 20px 0 0;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .sales-boxes .top-sales li {
@@ -167,9 +169,57 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  padding-right: 20px;
 }
 .sales-boxes .top-sales li .product,
 .price {
   font-weight: 400;
   color: #333;
+}
+
+@media (max-width: 1430px){
+  .sales-boxes{
+    display: flex;
+    flex-direction: column;
+margin:0 10px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .sales-boxes .recent-sales{
+    width: 900px;
+    
+  }
+
+}
+
+@media (max-width: 810px){
+  body{
+    overflow-x: hidden;
+  }
+  .recent-sales table {
+    width: 100%;
+    text-align: left;
+   overflow-x: scroll;
+   
+}
+#sales_details td button{
+  font-size: 1rem;
+}
+#sales_details th, #sales_details td {
+  padding: 0.8rem;
+ white-space: wrap;
+}
+.home-content .sales-boxes .recent-sales{
+  padding: 20px 10px;
+}
+.sales-boxes .box .title{
+  font-size: 1.6rem;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.home-content .sales-boxes .top-sales {
+  width: fit-content;
+  margin-left:  30px;
+}
 }
