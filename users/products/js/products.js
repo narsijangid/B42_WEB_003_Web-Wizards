@@ -29,12 +29,12 @@ fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.
         } else {
             searchedProducts = products;
         }
-        
+
         // If a search value exists, filter the products further based on the title
         if (searchValue) {
             searchedProducts = searchedProducts.filter(p => p[1].title.toLowerCase().includes(searchValue.toLowerCase()));
         }
-        
+
         currentPage = 1; // Reset page before display
         displayProducts();
 
@@ -45,7 +45,7 @@ fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.
                 message += searchValue;
             }
             if (category !== "all") {
-                message += (message ? " - " : "")  + category;
+                message += (message ? " - " : "") + category;
             }
             searchMessageBox.innerHTML = `${message} <span>${searchedProducts.length}</span>`;
         }
@@ -54,17 +54,17 @@ fetch("https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.
 
 function displayProducts() {
     // Use filteredProducts if available, otherwise use searchedProducts
-    filteredProducts = filteredProducts.length > 0 ? filteredProducts : searchedProducts;
+    const productsToDisplay = filteredProducts.length > 0 ? filteredProducts : searchedProducts;
 
-    const totalItems = filteredProducts.length;
+    const totalItems = productsToDisplay.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const itemsToDisplay = filteredProducts.slice(startIndex, endIndex);
-    
+    const itemsToDisplay = productsToDisplay.slice(startIndex, endIndex);
+
     const productSection = document.getElementById("product-section");
     productSection.innerHTML = "";
-    
+
     let productListDiv = document.createElement("div");
     productListDiv.classList.add("product-list-div");
 
@@ -81,9 +81,9 @@ function displayProducts() {
                     <p id="price">$${item[1].price}</p>
                     <p id="rate"><i class="ri-star-s-fill"></i>${item[1].rating}</p>
                 </div>`;
-                productDiv.addEventListener("click", () => {
-                    window.location.href = "B42_WEB_003_Web-Wizards/users/products/individualProduct.html?id=" + item[0];
-                });
+            productDiv.addEventListener("click", () => {
+                window.location.href = "B42_WEB_003_Web-Wizards/users/products/individualProduct.html?id=" + item[0];
+            });
             productListDiv.appendChild(productDiv);
 
         });
@@ -118,13 +118,13 @@ document.querySelector("button.sort-by").addEventListener("click", () => {
 function sortItems(value) {
     filteredProducts = [...searchedProducts]; // Reset filtered products
     if (value === "sort-by-price-asc") {
-        filteredProducts.sort((a, b) => a.price - b.price);
+        filteredProducts.sort((a, b) => a[1].price - b[1].price);
     } else if (value === "sort-by-price-desc") {
-        filteredProducts.sort((a, b) => b.price - a.price);
+        filteredProducts.sort((a, b) => b[1].price - a[1].price);
     } else if (value === "sort-by-rating-asc") {
-        filteredProducts.sort((a, b) => b.rating - a.rating);
+        filteredProducts.sort((a, b) => b[1].rating - a[1].rating);
     } else if (value === "sort-by-rating-desc") {
-        filteredProducts.sort((a, b) => a.rating - b.rating);
+        filteredProducts.sort((a, b) => a[1].rating - b[1].rating);
     }
     currentPage = 1;
     displayProducts();
@@ -152,13 +152,13 @@ document.querySelector(".rating-filter").addEventListener("click", (e) => {
 function filterByPrice(value) {
     filteredProducts = [...searchedProducts]; // Reset filtered products
     if (value === "price-25-above") {
-        filteredProducts = filteredProducts.filter(p => p.price >= 25);
+        filteredProducts = filteredProducts.filter(p => p[1].price >= 25);
     } else if (value === "price-50-above") {
-        filteredProducts = filteredProducts.filter(p => p.price >= 50);
+        filteredProducts = filteredProducts.filter(p => p[1].price >= 50);
     } else if (value === "price-75-above") {
-        filteredProducts = filteredProducts.filter(p => p.price >= 75);
+        filteredProducts = filteredProducts.filter(p => p[1].price >= 75);
     } else if (value === "price-100-above") {
-        filteredProducts = filteredProducts.filter(p => p.price >= 100);
+        filteredProducts = filteredProducts.filter(p => p[1].price >= 100);
     }
     currentPage = 1;
     displayProducts();
@@ -167,13 +167,13 @@ function filterByPrice(value) {
 function filterByRating(value) {
     filteredProducts = [...searchedProducts]; // Reset filtered products
     if (value === "star-4-above") {
-        filteredProducts = filteredProducts.filter(p => p.rating >= 4);
+        filteredProducts = filteredProducts.filter(p => p[1].rating >= 4);
     } else if (value === "star-3-above") {
-        filteredProducts = filteredProducts.filter(p => p.rating >= 3);
+        filteredProducts = filteredProducts.filter(p => p[1].rating >= 3);
     } else if (value === "star-2-above") {
-        filteredProducts = filteredProducts.filter(p => p.rating >= 2);
+        filteredProducts = filteredProducts.filter(p => p[1].rating >= 2);
     } else if (value === "star-1-above") {
-        filteredProducts = filteredProducts.filter(p => p.rating >= 1);
+        filteredProducts = filteredProducts.filter(p => p[1].rating >= 1);
     }
     currentPage = 1;
     displayProducts();

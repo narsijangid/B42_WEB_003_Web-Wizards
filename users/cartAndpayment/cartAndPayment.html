@@ -144,12 +144,12 @@
         <div id="products-container"></div>
 
         <h3>Delivery Shipping</h3>
-        <div class="delivery-option">
+        <div class="delivery-option" onclick="document.getElementById('fast').click()">
           <div class="fast-delivery">
             <input type="radio" id="fast" name="delivery" value="fast" />
-            <label class="delivery-label" for="fast"
-              >$4.99 - Fast Delivery <strong>(Recommend)</strong></label
-            >
+            <label class="delivery-label" for="fast">
+              $4.99 - Fast Delivery <strong>(Recommend)</strong>
+            </label>
           </div>
           <div class="delivery-info">
             <img
@@ -158,16 +158,12 @@
             />
           </div>
         </div>
-        <div class="delivery-option">
+        <div class="delivery-option" onclick="document.getElementById('free').click()">
           <div class="fast-delivery">
-            <input
-              type="radio"
-              id="free"
-              name="delivery"
-              value="free"
-              checked
-            />
-            <label class="delivery-label" for="free">Free Delivery</label>
+            <input type="radio" id="free" name="delivery" value="free" checked />
+            <label class="delivery-label" for="free">
+              Free Delivery
+            </label>
           </div>
           <div class="delivery-info">
             <img

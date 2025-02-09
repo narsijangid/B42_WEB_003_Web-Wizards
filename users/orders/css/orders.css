@@ -75,6 +75,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Add horizontal scroll for smaller screens */
 }
 
 table {
@@ -159,20 +160,24 @@ th {
   font-size: 2rem;
   cursor: pointer;
 }
+
 .header {
   align-items: start;
   margin-bottom: 1rem;
   position: relative;
 }
+
 .flex.items-center {
   width: 100%;
 }
+
 .header img {
   width: 6rem;
   height: 6rem;
   border-radius: 0.425rem;
   border: 1px solid #c1c1c18e;
 }
+
 .header .details {
   display: grid;
   max-width: 350px;
@@ -182,11 +187,13 @@ th {
   column-gap: 2rem;
   font-size: 0.85rem;
 }
+
 .header .details h1 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
 }
+
 .header .details > div > p:first-of-type {
   margin: 0.25rem 0;
   color: #4b5563;
@@ -208,6 +215,7 @@ th {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
+
 .nav {
   border-bottom: 2px solid #e5e7eb;
 }
@@ -219,6 +227,7 @@ th {
 .modal-order-details-container table td {
   padding: 0.15rem;
 }
+
 .modal-order-details-container td[colspan="2"],
 #total_price {
   font-weight: 600;
@@ -235,4 +244,94 @@ th {
 
 .modal-order-details-container tr td:not(:first-of-type) {
   text-align: right;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .header .details {
+    grid-template-columns: 1fr;
+  }
+
+  .header img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .table-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .details {
+    text-align: center;
+  }
+
+  .header img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px;
+  }
+
+  table th,
+  table td {
+    padding: 5px;
+  }
+
+  .header .details {
+    font-size: 0.75rem;
+  }
+
+  .header img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .details h1 {
+    font-size: 1rem;
+  }
+
+  .header .details > div > p {
+    font-size: 0.75rem;
+  }
+
+  .header .status {
+    font-size: 0.75rem;
+  }
+
+  .header img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .table-container {
+    padding: 5px;
+  }
+
+  table th,
+  table td {
+    padding: 3px;
+  }
+
+  #order_status_modal {
+    min-width: 90%;
+  }
 }
