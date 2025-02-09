@@ -1,17 +1,22 @@
 # VOGUEMART
 
 ## Introduction
+
 VogueCart is a comprehensive online marketplace designed to enhance the shopping experience by offering a vast range of products across multiple categories. The platform enables users to browse, search, and purchase products with ease while ensuring a user-friendly and intuitive interface. With a modern and responsive design, VogueCart delivers seamless functionality, making online shopping convenient and efficient. The integration of advanced technologies enhances performance, security, and scalability, ensuring a reliable and robust e-commerce experience.
 
 ## Project Type
+
 Frontend
 
 ## Deployed App
+
 Frontend: https://narsijangid.github.io/B42_WEB_003_Web-Wizards/
 Backend: N/A
 Database: https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/
 
 ## Directory Structure
+
+```bash
 └── narsijangid-b42_web_003_web-wizards/
     ├── README.md
     ├── index.html
@@ -91,14 +96,18 @@ Database: https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedataba
             └── js/
                 ├── individualProduct.js
                 └── products.js
+```
 
 ## Video Walkthrough of the project
+
 Attach a very short video walkthrough of all of the features [ 1 - 3 minutes ]
 
 ## Video Walkthrough of the codebase
+
 Attach a very short video walkthrough of the codebase [ 1 - 5 minutes ]
 
 ## Features
+
 List out the key features of your application.
 
 - User Authentication & Authorization: Secure login and registration for users, with encrypted password storage and session management.
@@ -114,6 +123,7 @@ List out the key features of your application.
 - Session Storage: Ensures user session persistence and enhances user experience with temporary data storage.
 
 ## Design Decisions or Assumptions
+
 List your design decisions & assumptions
 
 - Used HTML, CSS, and JavaScript for the frontend due to their simplicity and wide browser support.
@@ -121,6 +131,7 @@ List your design decisions & assumptions
 - Implemented manual authentication using session storage and local storage for user sessions and data persistence.
 
 ## Installation & Getting Started
+
 Detailed instructions on how to install, configure, and get the project running.
 
 ```bash
@@ -132,6 +143,7 @@ cd B42_WEB_003_Web-Wizards
 ```
 
 ## Usage
+
 Provide instructions and examples on how to use your project.
 
 ```bash
@@ -142,6 +154,7 @@ Provide instructions and examples on how to use your project.
 ```
 
 ## Screenshots
+
 Landing page:
 ![alt text](./images/image.png)
 
@@ -152,26 +165,29 @@ Product page:
 ![alt text](./images/image-3.png)
 
 ## Credentials
+
 Provide user credentials for authenticated pages
 
 - Admin: admin@mail.com / password123
 - User: user@mail.com / password123
 
 ## APIs Used
+
 - Firebase Realtime Database for data storage
 
 ## API Endpoints
+
 List of your API endpoints, methods, brief descriptions, and examples of request/response.
 
-| Endpoint | Method | Description |
-| :-------- | :------- | :------------------------- |
-| `/api/products` | `GET` | Retrieve all products |
-| `/api/orders` | `GET` | Retrieve all orders |
-| `/api/cart` | `GET` | Retrieve cart items |
-| `/api/users` | `GET` | Retrieve all users |
-
+| Endpoint        | Method | Description           |
+| :-------------- | :----- | :-------------------- |
+| `/api/products` | `GET`  | Retrieve all products |
+| `/api/orders`   | `GET`  | Retrieve all orders   |
+| `/api/cart`     | `GET`  | Retrieve cart items   |
+| `/api/users`    | `GET`  | Retrieve all users    |
 
 ## Technology Stack
+
 List and provide a brief overview of the technologies used in the project.
 
 - HTML: Markup language for creating web pages
