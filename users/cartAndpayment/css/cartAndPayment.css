@@ -150,6 +150,9 @@ padding-top: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#cart h3, #cart p {
+    text-align: center;
+}
 
 #cart>h3 {
     text-align: left;
@@ -335,4 +338,62 @@ padding-top: 50px;
     height: 200px;
     color: indianred;
     font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    #payment {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    #cart, #payment {
+        padding: 10px;
+    }
+
+    .delivery-option {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delivery-info img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fast-delivery {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .payment-options {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .payment-label-2,
+    .payment-label-3 {
+        padding-left: 0;
+    }
+
+    .payment-options .payment-label-3 img,
+    .payment-label-2,
+    .payment-options .payment-label-1 img {
+        padding-top: 0;
+    }
+
+    .payment-input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .summary p {
+        font-size: 12px;
+    }
+
+    #pay-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
