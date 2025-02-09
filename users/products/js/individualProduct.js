@@ -4,15 +4,6 @@ const sideImageContainer = document.getElementById('side_image_container');
 const quantity = document.getElementById('quantity_box');
 let item = [];
 
-const isLoggedIn = sessionStorage.getItem("isLoggedIn");
-if (!isLoggedIn) {
-    window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
-}
-
-const userId = JSON.parse(sessionStorage.getItem("userId"));
-if (!userId) {
-    window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
-}
 
 (async function () {
     const API = await fetch(`https://b42web03webwizards-default-rtdb.asia-southeast1.firebasedatabase.app/products/${productId}.json`);
@@ -64,6 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 async function addToCart() {
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+        window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+    }
+
+    const userId = JSON.parse(sessionStorage.getItem("userId"));
+    if (!userId) {
+        window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+    }
+
+
     let data = {
         discountPercentage: item.discountPercentage,
         discountedTotal: (item.price - (item.price * (item.discountPercentage / 100))) * +quantity.value,
@@ -95,6 +97,16 @@ async function addToCart() {
 }
 
 async function buyNow() {
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+        window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+    }
+
+    const userId = JSON.parse(sessionStorage.getItem("userId"));
+    if (!userId) {
+        window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+    }
+
     let data = {
         discountPercentage: item.discountPercentage,
         discountedTotal: (item.price - (item.price * (item.discountPercentage / 100))) * +quantity.value,
