@@ -7,6 +7,16 @@ const pagination = document.getElementById('pagination');
 const tableBody = document.getElementById("orderTableBody");
 const modalImage = document.getElementById("modal_order_image");
 
+const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+if (!isLoggedIn) {
+    window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+}
+
+const userId = JSON.parse(sessionStorage.getItem("userId"));
+if (!userId) {
+    window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchOrders();
     document
@@ -19,7 +29,9 @@ async function fetchOrders() {
     try {
         const response = await fetch(apiUrl + "orders.json");
         const fetchedOrders = await response.json();
-        orders = Object.entries(fetchedOrders); // Convert the fetched object into an array
+        orders = Object.entries(fetchedOrders || {}); // Convert the fetched object into an array
+        orders = orders.filter(order => order[1].user_id == userId);
+
         // Populate the filters
         orders.forEach(o => {
             filters.add(o[1].category.toLowerCase());
@@ -42,6 +54,7 @@ async function fetchOrders() {
 
 function displayOrders(orders) {
     tableBody.innerHTML = "";
+
     if (orders && orders.length > 0) {
         orders.forEach((order) => {
             const row = document.createElement("tr");
@@ -53,7 +66,7 @@ function displayOrders(orders) {
                     <td>${order[1].category}</td>
                     <td>${order[1].status}</td>
                     <td>${order[1].quantity}</td>
-                    <td>$${order[1].finalPrice}</td>
+                    <td>$${order[1].finalPrice.toFixed(2)}</td>
                     <td><button class="view-btn" onclick="viewOrderDetails('${order[0]}')">View</button></td>
                 `;
             tableBody.appendChild(row);
@@ -109,16 +122,11 @@ document.querySelector(".search-bar input").addEventListener("keyup", debounce(s
 document.querySelector("#filter-button").addEventListener("change", debounce(filterOrders, 300));
 
 async function viewOrderDetails(orderId) {
-    console.log("View details for order ID:", orderId);
     try {
         const order = await fetchData(apiUrl + "orders/" + orderId + ".json");
         const product = await fetchData(apiUrl + "products/" + order.product_id + ".json");
-        const seller = await fetchData(apiUrl + "users/" + order.user_id + ".json");
-        const user = await fetchData(apiUrl + "users/" + order.seller_id + ".json");
-        console.log(order);
-        console.log(product);
-        console.log(seller);
-        console.log(user);
+        const seller = await fetchData(apiUrl + "users/" + order.seller_id + ".json");
+        const user = await fetchData(apiUrl + "users/" + order.user_id + ".json");
 
         document.getElementById("order_status").innerHTML = order.status.split("_").join(" ");
         modalImage.src = order.thumbnail;
@@ -131,9 +139,9 @@ async function viewOrderDetails(orderId) {
         document.getElementById("order_user_phone").textContent = user.phone_number;
         document.getElementById("order_user_address").textContent = user.address + ", " + user.zipcode;
         document.getElementById("order_product_quantity").textContent = order.quantity + " item";
-        document.getElementById("order_product_subtotal").textContent = "$" + order.totalPrice;
+        document.getElementById("order_product_subtotal").textContent = "$" + order.totalPrice.toFixed(2);
         document.getElementById("order_product_discount").textContent = "- $" + (order.totalPrice * order.discountPercentage / 100).toFixed(2);
-        document.getElementById("order_product_final").textContent = "$" + order.finalPrice;
+        document.getElementById("order_product_final").textContent = "$" + order.finalPrice.toFixed(2);
     } catch (err) {
         console.error("Error fetching order details:", err);
     } finally {

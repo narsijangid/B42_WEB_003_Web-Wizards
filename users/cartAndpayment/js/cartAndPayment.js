@@ -8,6 +8,17 @@ let discountValue = 0;
 let totalPriceValue = 0;
 let debounceTimeout;
 
+const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+if (!isLoggedIn) {
+  window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+}
+
+const userId = JSON.parse(sessionStorage.getItem("userId"));
+console.log(userId)
+if (!userId) {
+  window.location.href = "B42_WEB_003_Web-Wizards/users/auth/userlogin.html";
+}
+
 async function fetchAndDisplayProducts() {
   const url = apiUrl + "cart.json";
   const container = document.getElementById("products-container");
@@ -15,11 +26,15 @@ async function fetchAndDisplayProducts() {
   try {
     const response = await fetch(url);
     let data = await response.json();
-    if (!data) {
+
+    if (!data || Object.entries(data).length === 0) {
       container.innerHTML = `<p class="empty-cart">No products in the cart.</p>`;
       return;
     }
+
     data = Object.entries(data);
+    data = data.filter(item => item[1].user_id == userId);
+
 
     container.innerHTML = "";
     subTotalValue = 0;
@@ -215,12 +230,11 @@ async function createOrder() {
     }
 
     let cart = Object.entries(data);
-    console.log(cart);
+    cart = cart.filter(item => item[1].user_id == userId);
 
     const orderDetails = await Promise.all(
       cart.map(async (item) => {
         try {
-          console.log(item[1].product_id)
           const response = await fetch(apiUrl + `products/${item[1].product_id}.json`);
           const productData = await response.json();
 
@@ -239,11 +253,18 @@ async function createOrder() {
             status: "ordered",
             thumbnail: productData.thumbnail,
             title: productData.title,
-            user_id: localStorage.getItem('userId'),
+            user_id: +userId,
           });
 
           removeCartItems(item[0]);
-          updateUserInfo({}, localStorage.getItem('userId'))
+
+          updateUserInfo({
+            email: document.getElementById('payment_email').value,
+            phone_number: document.getElementById('payment_contant_number').value,
+            address: document.getElementById('payment_address').value,
+            zipcode: document.getElementById('payment_zipcode').value,
+          }, userId);
+
         } catch (error) {
           console.error("Error fetching product data:", error);
           return null;
@@ -251,7 +272,7 @@ async function createOrder() {
       })
     );
     alert("Order placed successfully.")
-    window.location.href = "B42_WEB_003_Web-Wizards/index.html";
+    window.location.href = "B42_WEB_003_Web-Wizards/users/orders/orders.html";
   } catch (error) {
     console.error("Error fetching cart data:", error);
   }
@@ -286,15 +307,16 @@ async function removeCartItems(id) {
       },
     });
     const response = await res.json();
-    console.log("Cart item removed successfully:", response);
+    console.log("Cart item removed successfully.");
   } catch (err) {
     console.error("Error removing cart item:", err);
   }
 }
 
 async function updateUserInfo(data, id) {
+  console.log(id, typeof id)
   try {
-    const res = await fetch(apiUrl + `user/${id}.json`, {
+    const res = await fetch(apiUrl + `users/${id}.json`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
