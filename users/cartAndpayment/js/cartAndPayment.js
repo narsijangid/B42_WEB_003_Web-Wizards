@@ -35,6 +35,10 @@ async function fetchAndDisplayProducts() {
     data = Object.entries(data);
     data = data.filter(item => item[1].user_id == userId);
 
+    if (data.length === 0) {
+      container.innerHTML = `<p class="empty-cart">No products in the cart.</p>`;
+      return;
+    }
 
     container.innerHTML = "";
     subTotalValue = 0;

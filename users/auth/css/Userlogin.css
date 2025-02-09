@@ -85,9 +85,11 @@
 
 /* VogueCart */
 .voguecart-text {
+  font-family: "Lexend Giga", serif !important;
+  font-weight: 600;
+  letter-spacing: -2px;
   font-size: 27px;
   color: black;
-  font-weight: bolder;
 }
 
 /* Form Container */
