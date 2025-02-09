@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Products Table</title>
     <link rel="stylesheet" href="product_table.css">
-    <header class="header">
-        <div class="top-bar">
-            <span>Download VogueCart mobile app</span>
-        </div>
-        <div class="main-header">
-            <div class="logo-section">
-                <img src="/B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" alt="VogueCart" class="logo">
-                <span class="delivery-info">Deliver to Bangalore, India</span>
-            </div>
-            <div class="search-section">
-                <select id="productCategory">
-                    <option value="all">All products</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="shoes">Shoes</option>
-                </select>
-                <input type="text" id="searchHeader" placeholder="Search for products">
-                <button id="searchBtn"><i class="search-icon">🔍</i></button>
-            </div>
-            <nav class="header-nav">
-                <a href="#">Promo</a>
-                <a href="#">VogueCart news</a>
-                <a href="#">Help & Center</a>
-                <a href="#">Language</a>
-                <i class="cart-icon">🛒</i>
-                <i class="notifications-icon">🔔</i>
-                <i class="profile-icon">👤</i>
-            </nav>
-        </div>
-    </header>
-    
+    <link rel="icon" type="image/x-icon" href="B42_WEB_003_Web-Wizards/images/VOUGECART_light.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <base href="/" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/css/font.module.css" />
+    <link rel="stylesheet" href="B42_WEB_003_Web-Wizards/admin/css/admin.navbar.module.css" />
 </head>
+
 <body>
+    
     <div class="container">
         <h1>Products Table</h1>
         <div class="toolbar">
-            <a href="products_form.html" class="add-product-btn">Add Product</a>
             <input type="text" id="searchInput" placeholder="Search products by any field...">
-            <a href="B42_WEB_003_Web-Wizards/admin/dashboard/dashboard.html" class="admin-dashboard-btn">Admin Dashboard</a>
-            <select id="itemsPerPage">
-                <option value="5">5</option>
-                <option value="10" selected>10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-            </select>
+         
+            <div>
+                <label for="itemsPerPage">Rows:</label>
+                <select id="itemsPerPage">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+                <a href="products_form.html" class="add-product-btn">Add Product</a>
+            </div>
         </div>
 
         <table id="productsTable">
@@ -64,13 +46,5 @@
 
     <script src="products_table1.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
